@@ -1,0 +1,6 @@
+Erro: Linha: 7 Faltou ; na atribuicao
+
+Erro: Linha: 7 Esperava um ]
+
+Erro: Linha: 8 Atribuicao incorreta
+

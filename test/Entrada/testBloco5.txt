@@ -1,0 +1,18 @@
+program
+function teste () begin
+while (a>b)do begin
+end
+while(a+b||a>c) do begin
+integer a;
+real b;
+a=teste();
+end
+while()begin
+n=a+b;
+end
+while(a>b+c) do begin
+a=q;
+
+
+a=1;
+end

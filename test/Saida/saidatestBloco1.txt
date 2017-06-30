@@ -1,0 +1,55 @@
+ 1 program palavra reservada
+ 2 function palavra reservada
+ 2 teste Identificador
+ 2 ( delimitador
+ 2 ) delimitador
+ 2 begin palavra reservada
+ 3 integer palavra reservada
+ 3 a Identificador
+ 3 = operador relacional
+ 3 1 numero
+ 3 ; delimitador
+ 4 a Identificador
+ 4 = operador relacional
+ 4 a Identificador
+ 4 + operador aritmetico
+ 4 b Identificador
+ 4 ; delimitador
+ 5 a Identificador
+ 5 [ delimitador
+ 5 1 numero
+ 5 ] delimitador
+ 5 = operador relacional
+ 5 [ delimitador
+ 5 "app" string
+ 5 ] delimitador
+ 5 ; delimitador
+ 6 n Identificador
+ 6 = operador relacional
+ 6 "erro" string
+ 7 n Identificador
+ 7 [ delimitador
+ 7 1 numero
+ 7 = operador relacional
+ 7 'a' char
+ 7 ; delimitador
+ 8 a Identificador
+ 8 = operador relacional
+ 8 ; delimitador
+ 9 teste Identificador
+ 9 = operador relacional
+ 9 a Identificador
+ 9 ( delimitador
+ 9 1 numero
+ 9 ) delimitador
+ 9 ; delimitador
+ 10 real palavra reservada
+ 10 ops Identificador
+ 10 = operador relacional
+ 10 txt Identificador
+ 10 ( delimitador
+ 10 ) delimitador
+ 10 ; delimitador
+ 11 end palavra reservada
+
+ Nao existem erros lexicos

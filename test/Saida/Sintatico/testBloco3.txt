@@ -1,0 +1,18 @@
+Erro: Linha: 5 read nao possui (
+
+Erro: Linha: 6 Esperava parametro read
+
+Erro: Linha: 7 Parametro read incorreto, falta Id 
+
+Erro: Linha: 7 Parametro read incorreto, falta Id 
+
+Erro: Linha: 8 Parametro read incorreto, falta Id 
+
+Erro: Linha: 8 Parametro read incorreto, falta Id 
+
+Erro: Linha: 10 Esperava )
+
+Erro: Linha: 11 read nao possui (
+
+Erro: Linha: 11 Esperava )
+

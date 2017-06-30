@@ -1,0 +1,8 @@
+program
+    const
+    begin
+        integer o[+]=[3];
+        integer u[2]=["aa"];
+        integer o[6]=["ioo"];   
+        integer atriz [1][2]=[1];           
+    end

@@ -1,0 +1,72 @@
+ 1 program palavra reservada
+ 2 function palavra reservada
+ 2 teste Identificador
+ 2 ( delimitador
+ 2 ) delimitador
+ 2 begin palavra reservada
+ 3 while palavra reservada
+ 3 ( delimitador
+ 3 a Identificador
+ 3 > operador relacional
+ 3 b Identificador
+ 3 ) delimitador
+ 3 do palavra reservada
+ 3 begin palavra reservada
+ 4 end palavra reservada
+ 5 while palavra reservada
+ 5 ( delimitador
+ 5 a Identificador
+ 5 + operador aritmetico
+ 5 b Identificador
+ 5 || operador logico
+ 5 a Identificador
+ 5 > operador relacional
+ 5 c Identificador
+ 5 ) delimitador
+ 5 do palavra reservada
+ 5 begin palavra reservada
+ 6 integer palavra reservada
+ 6 a Identificador
+ 6 ; delimitador
+ 7 real palavra reservada
+ 7 b Identificador
+ 7 ; delimitador
+ 8 a Identificador
+ 8 = operador relacional
+ 8 teste Identificador
+ 8 ( delimitador
+ 8 ) delimitador
+ 8 ; delimitador
+ 9 end palavra reservada
+ 10 while palavra reservada
+ 10 ( delimitador
+ 10 ) delimitador
+ 10 begin palavra reservada
+ 11 n Identificador
+ 11 = operador relacional
+ 11 a Identificador
+ 11 + operador aritmetico
+ 11 b Identificador
+ 11 ; delimitador
+ 12 end palavra reservada
+ 13 while palavra reservada
+ 13 ( delimitador
+ 13 a Identificador
+ 13 > operador relacional
+ 13 b Identificador
+ 13 + operador aritmetico
+ 13 c Identificador
+ 13 ) delimitador
+ 13 do palavra reservada
+ 13 begin palavra reservada
+ 14 a Identificador
+ 14 = operador relacional
+ 14 q Identificador
+ 14 ; delimitador
+ 15 a Identificador
+ 15 = operador relacional
+ 15 1 numero
+ 15 ; delimitador
+ 16 end palavra reservada
+
+ Nao existem erros lexicos

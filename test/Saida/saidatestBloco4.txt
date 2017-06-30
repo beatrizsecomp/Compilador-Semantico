@@ -1,0 +1,117 @@
+ 1 program palavra reservada
+ 2 function palavra reservada
+ 2 teste Identificador
+ 2 ( delimitador
+ 2 ) delimitador
+ 2 begin palavra reservada
+ 3 if palavra reservada
+ 3 ( delimitador
+ 3 a Identificador
+ 3 > operador relacional
+ 3 b Identificador
+ 3 ) delimitador
+ 3 then palavra reservada
+ 3 begin palavra reservada
+ 4 a Identificador
+ 4 = operador relacional
+ 4 1 numero
+ 4 ; delimitador
+ 5 amora Identificador
+ 5 ( delimitador
+ 5 1 numero
+ 5 ) delimitador
+ 5 ; delimitador
+ 6 end palavra reservada
+ 7 if palavra reservada
+ 7 ( delimitador
+ 7 ! operador logico
+ 7 ( delimitador
+ 7 a Identificador
+ 7 + operador aritmetico
+ 7 b Identificador
+ 7 > operador relacional
+ 7 c Identificador
+ 7 - operador aritmetico
+ 7 d Identificador
+ 7 ) delimitador
+ 7 ) delimitador
+ 7 then palavra reservada
+ 7 begin palavra reservada
+ 8 a Identificador
+ 8 = operador relacional
+ 8 1 numero
+ 8 ; delimitador
+ 9 amora Identificador
+ 9 ( delimitador
+ 9 1 numero
+ 9 ) delimitador
+ 9 ; delimitador
+ 10 end palavra reservada
+ 11 if palavra reservada
+ 11 ( delimitador
+ 11 a Identificador
+ 11 != operador relacional
+ 11 b Identificador
+ 11 ) delimitador
+ 11 then palavra reservada
+ 11 begin palavra reservada
+ 12 teste Identificador
+ 12 ( delimitador
+ 12 ) delimitador
+ 12 ; delimitador
+ 13 a Identificador
+ 13 ; delimitador
+ 14 a Identificador
+ 14 = operador relacional
+ 14 1 numero
+ 14 ; delimitador
+ 15 end palavra reservada
+ 16 else palavra reservada
+ 16 begin palavra reservada
+ 17 a Identificador
+ 17 = operador relacional
+ 17 -1 numero
+ 17 ; delimitador
+ 18 end palavra reservada
+ 19 if palavra reservada
+ 19 ( delimitador
+ 19 a Identificador
+ 19 > operador relacional
+ 19 b Identificador
+ 19 || operador logico
+ 19 c Identificador
+ 19 > operador relacional
+ 19 d Identificador
+ 19 ) delimitador
+ 19 begin palavra reservada
+ 20 ecomp Identificador
+ 20 = operador relacional
+ 20 1 numero
+ 20 ; delimitador
+ 21 teste Identificador
+ 21 ( delimitador
+ 21 ) delimitador
+ 21 ; delimitador
+ 22 a Identificador
+ 22 = operador relacional
+ 22 [ delimitador
+ 22 "a" string
+ 22 ] delimitador
+ 22 ; delimitador
+ 23 end palavra reservada
+ 24 if palavra reservada
+ 24 ( delimitador
+ 24 a Identificador
+ 24 > operador relacional
+ 24 b Identificador
+ 24 || operador logico
+ 24 c Identificador
+ 24 > operador relacional
+ 24 d Identificador
+ 24 ) delimitador
+ 24 then palavra reservada
+ 24 begin palavra reservada
+ 25 end palavra reservada
+ 26 end palavra reservada
+
+ Nao existem erros lexicos

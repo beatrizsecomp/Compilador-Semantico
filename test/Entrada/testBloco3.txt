@@ -1,0 +1,12 @@
+program
+function teste () begin
+read(a);
+read(a,b,h,teste,id);
+read a);
+read ();
+read("oi",a,b,c);
+read(a,"k",b);
+read(id)
+read(a;
+read a;
+end

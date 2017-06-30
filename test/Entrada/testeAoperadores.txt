@@ -1,0 +1,40 @@
+program
+var begin 
+char a='a',a[1],a=[1];
+boolean t,a=1;
+real ameixa[1][2][3]=[true,6,"amora",1],a,n=1;
+end 
+const begin 
+integer a=1,a[1]=4;
+char a="amora",a=1;
+real quero = "chocolate", a='a';
+string ameixa=[1,2],flocos = 1;
+end
+function teste (integer a,real b):real begin
+a =[a];
+a=true;
+nm=a(1)+2;
+integer a,b,c=1;
+text=(2-1)*(2);
+read (s,c);
+amora(1);
+while ((a<=b))do begin
+a=1;
+teste;
+end
+write ("amora",1,c,"oi",'a');
+write(a+b,1);
+retorno->(a);
+if (a>b||c>d)then begin 
+a=1;
+n=1;
+end
+else begin
+n=1;
+hoje;
+end
+end
+function amora () begin
+end
+function txt (integer a)begin
+end

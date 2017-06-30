@@ -1,0 +1,7 @@
+Erro: Linha: 5 Esperava um operador relacional
+
+Erro: Linha: 10 Esperava parametro
+
+Erro: Linha: 10 Esperava do
+
+Erro: Faltou end na funcao

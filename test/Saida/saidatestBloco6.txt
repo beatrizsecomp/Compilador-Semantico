@@ -1,0 +1,69 @@
+ 1 program palavra reservada
+ 2 function palavra reservada
+ 2 teste Identificador
+ 2 ( delimitador
+ 2 ) delimitador
+ 2 begin palavra reservada
+ 3 a Identificador
+ 3 = operador relacional
+ 3 ( delimitador
+ 3 1 numero
+ 3 + operador aritmetico
+ 3 1 numero
+ 3 ) delimitador
+ 3 > operador relacional
+ 3 a Identificador
+ 3 || operador logico
+ 3 a Identificador
+ 3 + operador aritmetico
+ 3 b Identificador
+ 3 > operador relacional
+ 3 c Identificador
+ 3 ; delimitador
+ 4 a Identificador
+ 4 ( delimitador
+ 4 + operador aritmetico
+ 4 , delimitador
+ 4 "amora" string
+ 4 , delimitador
+ 4 a Identificador
+ 4 , delimitador
+ 4 'a' char
+ 4 , delimitador
+ 4 a Identificador
+ 4 + operador aritmetico
+ 4 b Identificador
+ 4 ) delimitador
+ 4 ; delimitador
+ 5 teste Identificador
+ 5 ( delimitador
+ 5 ) delimitador
+ 5 ; delimitador
+ 6 a Identificador
+ 6 -> retorno
+ 6 ( delimitador
+ 6 a Identificador
+ 6 + operador aritmetico
+ 6 b Identificador
+ 6 ) delimitador
+ 6 ; delimitador
+ 7 a Identificador
+ 7 -> retorno
+ 7 ( delimitador
+ 7 "amora" string
+ 7 ) delimitador
+ 8 a Identificador
+ 8 -> retorno
+ 8 ( delimitador
+ 8 1 numero
+ 8 ) delimitador
+ 8 ; delimitador
+ 9 a Identificador
+ 9 -> retorno
+ 9 ( delimitador
+ 9 'a' char
+ 9 ) delimitador
+ 9 ; delimitador
+ 10 end palavra reservada
+
+ Nao existem erros lexicos

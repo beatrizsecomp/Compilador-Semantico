@@ -1,0 +1,9 @@
+program
+function teste () begin
+write("escreve",'a',a,1+1);
+write(+);
+write(1,-);
+write();
+write(;
+write(a;
+end

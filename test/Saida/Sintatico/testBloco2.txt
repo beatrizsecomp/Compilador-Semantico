@@ -1,0 +1,14 @@
+Erro: Linha: 4 Parametro write incorreto: +
+
+Erro: Linha: 5 Parametro write incorreto: -
+
+Erro: Linha: 6 Esperava parametro write
+
+Erro: Linha: 7 Parametro write incorreto: ;
+
+Erro: Linha: 7 expressao write mal formada esperava )
+
+Erro: Linha: 8 Esperava , ou ) 
+
+Erro: Linha: 8 expressao write mal formada esperava )
+

@@ -1,0 +1,13 @@
+program
+   var
+    begin
+    boolean c,a,r,d; boolean a,d,r,w=3;
+        integer i_3a=0,a=3,a=8;
+        integer abacate;
+        real a;
+        real a = -15.55;
+        boolean c;
+        boolean bool = true;  
+        integer atriz[1][2]=[6,4,5,6,7];
+    end
+    

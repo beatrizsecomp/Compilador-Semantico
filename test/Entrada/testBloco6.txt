@@ -1,0 +1,10 @@
+program
+function teste () begin
+a=(1+1)>a||a+b>c;
+a(+,"amora",a,'a',a+b);
+teste();
+a->(a+b);
+a->("amora")
+a->(1);
+a->('a');
+end

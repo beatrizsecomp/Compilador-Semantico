@@ -1,0 +1,79 @@
+ 1 program palavra reservada
+ 2 var palavra reservada
+ 3 begin palavra reservada
+ 4 boolean palavra reservada
+ 4 c Identificador
+ 4 , delimitador
+ 4 a Identificador
+ 4 , delimitador
+ 4 r Identificador
+ 4 , delimitador
+ 4 d Identificador
+ 4 ; delimitador
+ 4 boolean palavra reservada
+ 4 a Identificador
+ 4 , delimitador
+ 4 d Identificador
+ 4 , delimitador
+ 4 r Identificador
+ 4 , delimitador
+ 4 w Identificador
+ 4 = operador relacional
+ 4 3 numero
+ 4 ; delimitador
+ 5 integer palavra reservada
+ 5 i_3a Identificador
+ 5 = operador relacional
+ 5 0 numero
+ 5 , delimitador
+ 5 a Identificador
+ 5 = operador relacional
+ 5 3 numero
+ 5 , delimitador
+ 5 a Identificador
+ 5 = operador relacional
+ 5 8 numero
+ 5 ; delimitador
+ 6 integer palavra reservada
+ 6 abacate Identificador
+ 6 ; delimitador
+ 7 real palavra reservada
+ 7 a Identificador
+ 7 ; delimitador
+ 8 real palavra reservada
+ 8 a Identificador
+ 8 = operador relacional
+ 8 -15.55 numero
+ 8 ; delimitador
+ 9 boolean palavra reservada
+ 9 c Identificador
+ 9 ; delimitador
+ 10 boolean palavra reservada
+ 10 bool Identificador
+ 10 = operador relacional
+ 10 true palavra reservada
+ 10 ; delimitador
+ 11 integer palavra reservada
+ 11 atriz Identificador
+ 11 [ delimitador
+ 11 1 numero
+ 11 ] delimitador
+ 11 [ delimitador
+ 11 2 numero
+ 11 ] delimitador
+ 11 = operador relacional
+ 11 [ delimitador
+ 11 6 numero
+ 11 , delimitador
+ 11 4 numero
+ 11 , delimitador
+ 11 5 numero
+ 11 , delimitador
+ 11 6 numero
+ 11 , delimitador
+ 11 7 numero
+ 11 ] delimitador
+ 11 ; delimitador
+ 12 end palavra reservada
+
+ Nao existem erros lexicos
