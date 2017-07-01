@@ -121,7 +121,7 @@
  15 = operador relacional
  15 true palavra reservada
  15 ; delimitador
- 16 uedna Identificador
+ 16 nm Identificador
  16 = operador relacional
  16 a Identificador
  16 ( delimitador
@@ -139,122 +139,120 @@
  17 = operador relacional
  17 1 numero
  17 ; delimitador
- 18 segura Identificador
+ 18 text Identificador
  18 = operador relacional
- 18 "namaodeDeus" string
+ 18 ( delimitador
+ 18 2 numero
+ 18 -1 numero
+ 18 ) delimitador
+ 18 * operador aritmetico
+ 18 ( delimitador
+ 18 2 numero
+ 18 ) delimitador
  18 ; delimitador
- 19 text Identificador
- 19 = operador relacional
+ 19 read palavra reservada
  19 ( delimitador
- 19 2 numero
- 19 -1 numero
- 19 ) delimitador
- 19 * operador aritmetico
- 19 ( delimitador
- 19 2 numero
+ 19 s Identificador
+ 19 , delimitador
+ 19 c Identificador
  19 ) delimitador
  19 ; delimitador
- 20 read palavra reservada
+ 20 amora Identificador
  20 ( delimitador
- 20 s Identificador
- 20 , delimitador
- 20 c Identificador
+ 20 1 numero
  20 ) delimitador
  20 ; delimitador
- 21 amora Identificador
+ 21 while palavra reservada
  21 ( delimitador
- 21 1 numero
+ 21 a Identificador
+ 21 > operador relacional
+ 21 b Identificador
+ 21 || operador logico
+ 21 a Identificador
+ 21 < operador relacional
+ 21 b Identificador
  21 ) delimitador
- 21 ; delimitador
- 22 while palavra reservada
- 22 ( delimitador
- 22 ( delimitador
+ 21 do palavra reservada
+ 21 begin palavra reservada
  22 a Identificador
- 22 <= operador relacional
- 22 b Identificador
- 22 ) delimitador
- 22 ) delimitador
- 22 do palavra reservada
- 22 begin palavra reservada
- 23 a Identificador
- 23 = operador relacional
- 23 1 numero
+ 22 = operador relacional
+ 22 1 numero
+ 22 ; delimitador
+ 23 teste Identificador
  23 ; delimitador
- 24 teste Identificador
- 24 ; delimitador
- 25 end palavra reservada
+ 24 end palavra reservada
+ 25 write palavra reservada
+ 25 ( delimitador
+ 25 "amora" string
+ 25 , delimitador
+ 25 1 numero
+ 25 , delimitador
+ 25 c Identificador
+ 25 , delimitador
+ 25 "oi" string
+ 25 , delimitador
+ 25 'a' char
+ 25 ) delimitador
+ 25 ; delimitador
  26 write palavra reservada
  26 ( delimitador
- 26 "amora" string
+ 26 a Identificador
+ 26 + operador aritmetico
+ 26 b Identificador
  26 , delimitador
  26 1 numero
- 26 , delimitador
- 26 c Identificador
- 26 , delimitador
- 26 "oi" string
- 26 , delimitador
- 26 'a' char
  26 ) delimitador
  26 ; delimitador
- 27 write palavra reservada
+ 27 retorno Identificador
+ 27 -> retorno
  27 ( delimitador
  27 a Identificador
- 27 + operador aritmetico
- 27 b Identificador
- 27 , delimitador
- 27 1 numero
  27 ) delimitador
  27 ; delimitador
- 28 retorno Identificador
- 28 -> retorno
+ 28 if palavra reservada
  28 ( delimitador
  28 a Identificador
+ 28 > operador relacional
+ 28 b Identificador
+ 28 || operador logico
+ 28 c Identificador
+ 28 > operador relacional
+ 28 d Identificador
  28 ) delimitador
- 28 ; delimitador
- 29 if palavra reservada
- 29 ( delimitador
+ 28 then palavra reservada
+ 28 begin palavra reservada
  29 a Identificador
- 29 > operador relacional
- 29 b Identificador
- 29 || operador logico
- 29 c Identificador
- 29 > operador relacional
- 29 d Identificador
- 29 ) delimitador
- 29 then palavra reservada
- 29 begin palavra reservada
- 30 a Identificador
+ 29 = operador relacional
+ 29 1 numero
+ 29 ; delimitador
+ 30 n Identificador
  30 = operador relacional
  30 1 numero
  30 ; delimitador
- 31 n Identificador
- 31 = operador relacional
- 31 1 numero
- 31 ; delimitador
- 32 end palavra reservada
- 33 else palavra reservada
- 33 begin palavra reservada
- 34 n Identificador
- 34 = operador relacional
- 34 1 numero
+ 31 end palavra reservada
+ 32 else palavra reservada
+ 32 begin palavra reservada
+ 33 n Identificador
+ 33 = operador relacional
+ 33 1 numero
+ 33 ; delimitador
+ 34 hoje Identificador
  34 ; delimitador
- 35 hoje Identificador
- 35 ; delimitador
+ 35 end palavra reservada
  36 end palavra reservada
- 37 end palavra reservada
- 38 function palavra reservada
- 38 amora Identificador
- 38 ( delimitador
- 38 ) delimitador
- 38 begin palavra reservada
- 39 end palavra reservada
- 40 function palavra reservada
- 40 txt Identificador
- 40 ( delimitador
- 40 integer palavra reservada
- 40 a Identificador
- 40 ) delimitador
- 40 begin palavra reservada
- 41 end palavra reservada
+ 37 function palavra reservada
+ 37 amora Identificador
+ 37 ( delimitador
+ 37 ) delimitador
+ 37 begin palavra reservada
+ 38 end palavra reservada
+ 39 function palavra reservada
+ 39 txt Identificador
+ 39 ( delimitador
+ 39 integer palavra reservada
+ 39 a Identificador
+ 39 ) delimitador
+ 39 begin palavra reservada
+ 40 end palavra reservada
 
  Nao existem erros lexicos

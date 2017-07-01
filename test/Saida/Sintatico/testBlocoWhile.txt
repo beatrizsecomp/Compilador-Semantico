@@ -1,0 +1,11 @@
+Erro: Linha: 3 Esperava )
+
+Erro: Linha: 10 Esperava um operador relacional
+
+Erro: Linha: 15 Esperava parametro
+
+Erro: Linha: 15 Esperava do
+
+Erro: Linha: 21 Esperava do
+
+Erro: Faltou end na funcao

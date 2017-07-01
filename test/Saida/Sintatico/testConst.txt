@@ -1,4 +1,6 @@
-Erro: Linha: 4 declaracao de matriz incorreta, esperava numero
+Erro: Linha: 4 Constantes precisam ser atribuidas
 
-Erro: Linha: 4 parametro matriz incorreto: +
+Erro: Linha: 6 Esperava ;
+
+Erro: Linha: 7 atribuicao de matriz incorreta
 

@@ -1,6 +1,11 @@
 program
 function teste () begin
-while (a>b)do begin
+while (a>b do begin
+a=0;
+teste();
+if(a>b)then begin
+n;
+end
 end
 while(a+b||a>c) do begin
 integer a;
@@ -15,4 +20,8 @@ a=q;
 
 
 a=1;
+while(a<=b)doo begin
+p=1;
+
+end
 end

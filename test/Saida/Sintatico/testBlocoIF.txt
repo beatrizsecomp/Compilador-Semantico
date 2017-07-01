@@ -1,0 +1,13 @@
+Erro: Linha: 4 Esperava begin
+
+Erro: Linha: 7 Esperava )
+
+Erro: Linha: 10 Esperava um operador relacional
+
+Erro: Linha: 21 Esperava then
+
+Erro: Linha: 26 Esperava begin
+
+Erro: Linha: 28 Esperava then
+
+Erro: Faltou end na funcao

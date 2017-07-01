@@ -18,7 +18,7 @@ integer a,b,c=1;
 text=(2-1)*(2);
 read (s,c);
 amora(1);
-while ((a<=b))do begin
+while (a>b||a<b)do begin
 a=1;
 teste;
 end

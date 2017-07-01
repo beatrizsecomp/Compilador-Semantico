@@ -6,4 +6,8 @@ write(1,-);
 write();
 write(;
 write(a;
+write "amora");
+write(a)
+write(1);
+
 end

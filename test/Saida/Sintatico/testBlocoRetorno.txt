@@ -1,4 +1,8 @@
 Erro: Linha: 4 Parametro invalido :+
 
+Erro: Linha: 6 Esperava )
+
 Erro: Linha: 8 Esperava ;
+
+Erro: Linha: 8 Esperava (
 
