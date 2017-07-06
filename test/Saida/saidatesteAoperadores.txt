@@ -143,11 +143,8 @@
  18 = operador relacional
  18 ( delimitador
  18 2 numero
- 18 -1 numero
- 18 ) delimitador
  18 * operador aritmetico
- 18 ( delimitador
- 18 2 numero
+ 18 1 numero
  18 ) delimitador
  18 ; delimitador
  19 read palavra reservada

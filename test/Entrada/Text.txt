@@ -1,0 +1,39 @@
+program
+    function soma(integer a,integer b):integer
+    begin
+        soma(a,b);
+        soma->(a+b);
+    end
+    function beta(integer a,integer b):integer
+    begin
+        soma(a,b);
+end
+function subtracao(integer a,integer b):integer
+    begin
+    integer i_3a=0,a=3,a=8;
+    integer a,a,a;
+        subtracao->(a-b);
+        a+o;
+        false;
+        if(a>b)then begin end
+
+    end
+    
+    function alfa(integer a,integer b):integer
+    begin
+        boolean c,a,r,d; boolean a,d,r,w=3;
+        write(a);
+        write(false);
+        write("a","b");
+        write("a");
+        write(a+b);
+        write(subtracao(3,1));
+        read(reaal);
+        read(bolean);
+        read(a,b,c);
+        
+
+    end
+    
+    
+

@@ -1,2 +1,2 @@
-Erro: Linha: 14 Faltou ; na atribuicao
+Erro: Linha: 19 Faltou ; na atribuicao
 

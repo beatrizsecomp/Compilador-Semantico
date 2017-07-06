@@ -2,11 +2,16 @@ program
 function teste () begin
 integer a = 1;
 a=a+b;
-a=a>(c*d);
+a=!(a>(c*d));
+a=!(a);
+nt=a+b;
+n=a*(a+n);
+lol=(a+b*(c));
 n=((c>d)||(n<d));
 numero=true;
+a[2]=[1+2,a];
 numero2=false;
-integer a=a+(b*c);
+integer a=a+(b*c),b=1,a[1];
 boolean bool = true;
 real n= a>b;
 a[1]=["app",2];

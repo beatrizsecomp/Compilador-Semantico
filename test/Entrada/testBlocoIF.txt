@@ -5,7 +5,7 @@ a=1;
 amora(1);
 end
 if(!(((a+b*c)>c-d))||(a>b))then begin
-a=((a+b)*(b+c));
+a=(a+b);
 amora(1);
 if(a+b)then begin
 id="erro";

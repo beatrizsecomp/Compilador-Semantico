@@ -6,6 +6,10 @@
  2 begin palavra reservada
  3 write palavra reservada
  3 ( delimitador
+ 3 a Identificador
+ 3 + operador aritmetico
+ 3 b Identificador
+ 3 , delimitador
  3 "escreve" string
  3 , delimitador
  3 'a' char

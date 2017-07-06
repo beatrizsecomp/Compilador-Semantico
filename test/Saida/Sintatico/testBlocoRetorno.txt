@@ -1,15 +1,3 @@
-Erro: Linha: 3 Esperava expressao relacional
-
-Erro: Linha: 3 Faltou ; na atribuicao
-
-Erro: Linha: 3 Esperava componente do bloco, token: >
-
-Erro: Linha: 3 Esperava componente do bloco, token: ||
-
-Erro: Linha: 3 Esperava componente do bloco, token: +
-
-Erro: Linha: 3 Esperava componente do bloco, token: >
-
 Erro: Linha: 4 Parametro invalido :+
 
 Erro: Linha: 6 Esperava )

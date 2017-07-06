@@ -15,7 +15,7 @@ a =[a];
 a=true;
 nm=a(1)+2;
 integer a,b,c=1;
-text=(2-1)*(2);
+text=(2*1);
 read (s,c);
 amora(1);
 while (a>b||a<b)do begin

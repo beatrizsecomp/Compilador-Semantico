@@ -1,24 +1,6 @@
 Erro: Linha: 4 Esperava begin
 
-Erro: Linha: 8 Esperava )
-
-Erro: Linha: 8 Faltou ; na atribuicao
-
-Erro: Linha: 8 Esperava componente do bloco, token: *
-
-Erro: Linha: 8 Esperava componente do bloco, token: (
-
-Erro: Linha: 8 Esperava componente do bloco, token: +
-
-Erro: Linha: 8 Esperava componente do bloco, token: )
-
-Erro: Linha: 8 Esperava componente do bloco, token: )
-
-Erro: Linha: 8 Esperava componente do bloco, token: ;
-
 Erro: Linha: 10 Esperava um operador relacional
-
-Erro: Linha: 13 Esperava )
 
 Erro: Linha: 23 Esperava then
 

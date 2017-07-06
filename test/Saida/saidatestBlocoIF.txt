@@ -51,17 +51,9 @@
  8 a Identificador
  8 = operador relacional
  8 ( delimitador
- 8 ( delimitador
  8 a Identificador
  8 + operador aritmetico
  8 b Identificador
- 8 ) delimitador
- 8 * operador aritmetico
- 8 ( delimitador
- 8 b Identificador
- 8 + operador aritmetico
- 8 c Identificador
- 8 ) delimitador
  8 ) delimitador
  8 ; delimitador
  9 amora Identificador
