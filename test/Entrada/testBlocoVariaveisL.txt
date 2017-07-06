@@ -2,13 +2,18 @@ program
 function teste () begin
 integer a = 1;
 a=a+b;
-a=a>c*d;
-integer a=a+b;
-a[1]=["app"];
+a=a>(c*d);
+n=((c>d)||(n<d));
+numero=true;
+numero2=false;
+integer a=a+(b*c);
+boolean bool = true;
+real n= a>b;
+a[1]=["app",2];
 n="erro"
 a='a';
 n[1]='a';
 a=1;
 teste = a(1);
-real ops= txt();
+real ops=txt();
 end

@@ -4,11 +4,13 @@ if(a>b)then
 a=1;
 amora(1);
 end
-if(!((a+b>c-d))then begin
+if(!(((a+b*c)>c-d))||(a>b))then begin
 a=((a+b)*(b+c));
 amora(1);
 if(a+b)then begin
 id="erro";
+end
+if((a==b)||c==1)then begin
 end
 if((a!=b))then begin
 teste();

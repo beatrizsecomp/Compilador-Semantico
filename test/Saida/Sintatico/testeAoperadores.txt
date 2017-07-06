@@ -1,2 +1,14 @@
+Erro: Linha: 18 Esperava expressao relacional
 
-Nao existem erros Sintaticos
+Erro: Linha: 18 Faltou ; na atribuicao
+
+Erro: Linha: 18 Esperava componente do bloco, token: *
+
+Erro: Linha: 18 Esperava componente do bloco, token: (
+
+Erro: Linha: 18 Esperava componente do bloco, token: 2
+
+Erro: Linha: 18 Esperava componente do bloco, token: )
+
+Erro: Linha: 18 Esperava componente do bloco, token: ;
+

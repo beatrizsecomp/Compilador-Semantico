@@ -1,0 +1,120 @@
+ 1 program palavra reservada
+ 2 function palavra reservada
+ 2 teste Identificador
+ 2 ( delimitador
+ 2 ) delimitador
+ 2 begin palavra reservada
+ 3 integer palavra reservada
+ 3 a Identificador
+ 3 = operador relacional
+ 3 1 numero
+ 3 ; delimitador
+ 4 a Identificador
+ 4 = operador relacional
+ 4 a Identificador
+ 4 + operador aritmetico
+ 4 b Identificador
+ 4 ; delimitador
+ 5 a Identificador
+ 5 = operador relacional
+ 5 a Identificador
+ 5 > operador relacional
+ 5 ( delimitador
+ 5 c Identificador
+ 5 * operador aritmetico
+ 5 d Identificador
+ 5 ) delimitador
+ 5 ; delimitador
+ 6 n Identificador
+ 6 = operador relacional
+ 6 ( delimitador
+ 6 ( delimitador
+ 6 c Identificador
+ 6 > operador relacional
+ 6 d Identificador
+ 6 ) delimitador
+ 6 || operador logico
+ 6 ( delimitador
+ 6 n Identificador
+ 6 < operador relacional
+ 6 d Identificador
+ 6 ) delimitador
+ 6 ) delimitador
+ 6 ; delimitador
+ 7 numero Identificador
+ 7 = operador relacional
+ 7 true palavra reservada
+ 7 ; delimitador
+ 8 numero2 Identificador
+ 8 = operador relacional
+ 8 false palavra reservada
+ 8 ; delimitador
+ 9 integer palavra reservada
+ 9 a Identificador
+ 9 = operador relacional
+ 9 a Identificador
+ 9 + operador aritmetico
+ 9 ( delimitador
+ 9 b Identificador
+ 9 * operador aritmetico
+ 9 c Identificador
+ 9 ) delimitador
+ 9 ; delimitador
+ 10 boolean palavra reservada
+ 10 bool Identificador
+ 10 = operador relacional
+ 10 true palavra reservada
+ 10 ; delimitador
+ 11 real palavra reservada
+ 11 n Identificador
+ 11 = operador relacional
+ 11 a Identificador
+ 11 > operador relacional
+ 11 b Identificador
+ 11 ; delimitador
+ 12 a Identificador
+ 12 [ delimitador
+ 12 1 numero
+ 12 ] delimitador
+ 12 = operador relacional
+ 12 [ delimitador
+ 12 "app" string
+ 12 , delimitador
+ 12 2 numero
+ 12 ] delimitador
+ 12 ; delimitador
+ 13 n Identificador
+ 13 = operador relacional
+ 13 "erro" string
+ 14 a Identificador
+ 14 = operador relacional
+ 14 'a' char
+ 14 ; delimitador
+ 15 n Identificador
+ 15 [ delimitador
+ 15 1 numero
+ 15 ] delimitador
+ 15 = operador relacional
+ 15 'a' char
+ 15 ; delimitador
+ 16 a Identificador
+ 16 = operador relacional
+ 16 1 numero
+ 16 ; delimitador
+ 17 teste Identificador
+ 17 = operador relacional
+ 17 a Identificador
+ 17 ( delimitador
+ 17 1 numero
+ 17 ) delimitador
+ 17 ; delimitador
+ 18 real palavra reservada
+ 18 ops Identificador
+ 18 = operador relacional
+ 18 txt Identificador
+ 18 ( delimitador
+ 18 ) delimitador
+ 18 ; delimitador
+ 19 end palavra reservada
+
+ Nao existem erros lexicos
