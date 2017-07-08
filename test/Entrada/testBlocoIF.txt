@@ -1,33 +1,8 @@
 program
 function teste () begin
-if(a>b)then 
-a=1;
-amora(1);
+
+if(      a>c||((fail+c)>c)     )then begin
+a=c;
 end
-if(!(((a+b*c)>c-d))||(a>b))then begin
-a=(a+b);
-amora(1);
-if(a+b)then begin
-id="erro";
-end
-if((a==b)||c==1)then begin
-end
-if((a!=b))then begin
-teste();
-a;
-a=1;
-end 
-else begin
-a=-1;
-end
-if(a>b||c>d)begin
-ecomp=1;
-teste();
-a=["a"];
-end
-if(a>b||c>d||n>c&&x!=b||b==c)then beg
-end
-if(!(a<=b))the begin
-a=n;
-end
+
 end

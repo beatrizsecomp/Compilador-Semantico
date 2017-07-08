@@ -10,6 +10,7 @@ public class AnalisadorSintatico {
     private ArrayList<String> erros;    //lista com os erros encontrados na an�lise.
     private int contTokens = 0;        
     private int aux = 0;
+    private int atterror=0;
 
     public void analise(ArrayList<Token> tokens) {
 
@@ -614,11 +615,15 @@ public class AnalisadorSintatico {
     private void opcId() {
         if (token.getTipo().equals("Identificador")) {
             //token = proximo();
+            this.atterror=0;
             expLogica(0);
             if (token.getLexema().equals("[")) {
                 declaracaoMatriz();
             if (token.getLexema().equals("=")) {
-                    token = proximo();
+                if(atterror!=0){
+                    erroSintatico("Atribuicao incorreta");
+                }    
+                token = proximo();
                     if (atId()) {
                     } else {
                         erroSintatico("Atribuicao incorreta");
@@ -636,6 +641,9 @@ public class AnalisadorSintatico {
             } else if (token.getLexema().equals(";")) {
                 token = proximo();
             } else if (token.getLexema().equals("=")) {
+                if(atterror!=0){
+                    erroSintatico("Atribuicao incorreta");
+                }
                 token = proximo();
                 if (atId()) {
                 } else {
@@ -897,7 +905,7 @@ public class AnalisadorSintatico {
             }
 
         } else {
-            erroSintatico("Esperava )");
+            erroSintatico("Esperava ) ");
             if (token.getLexema().equals("then")) {
                 token = proximo();
                 estruturaCondicional();
@@ -1505,6 +1513,7 @@ public class AnalisadorSintatico {
         if (n == '-' && token.getTipo().equals("numero")) {
             return true;
         } else if (token.getLexema().equals("+") || token.getLexema().equals("-")) {
+            this.atterror++;
             token = proximo();
 
             return true;
@@ -1537,6 +1546,7 @@ public class AnalisadorSintatico {
 
     private boolean termo() {
         if (token.getLexema().equals("*") || token.getLexema().equals('/') || token.getLexema().equals("%")) {
+            this.atterror++;
             return true;
         }
         return false;
@@ -1613,8 +1623,22 @@ public class AnalisadorSintatico {
         }
     }
     private boolean relacionan(int opc) {
+        System.out.println("Entrou"+token.getLexema());
         if (exp()) {
+            System.out.println("Pos ecp"+token.getLexema());
+            System.out.println(" aqui"+aux);
+            if(token.getLexema().equals(")")&&aux!=0){
+                token = proximo();
+                this.aux--;
+             }
+            System.out.println("Um"+token.getLexema());
+                if (token.getLexema().equals("*") || token.getLexema().equals('/') || token.getLexema().equals("%")|| token.getLexema().equals("-")|| token.getLexema().equals("+")) {
+                        token = proximo();
+                        this.atterror++;
+                        exp();
+                }
             if (operadorRelacional()) {
+                this.atterror++;
                 if (exp()) {
                     return true;
                 } else {
@@ -1637,6 +1661,7 @@ public class AnalisadorSintatico {
                 }
             } else {
                 if(opc==1){
+                    System.out.println("Toooo"+token.getLexema());
                 erroSintatico("Esperava um operador relacional");
                 if (token.getLexema().equals("||") || token.getLexema().equals("&&")) {
                     token = proximo();
@@ -1654,9 +1679,11 @@ public class AnalisadorSintatico {
     private boolean expRelacional(int opc) {
         if (token.getLexema().equals("(")) {
             token = proximo();
+            this.aux++;
             relacionan(opc);
             if (token.getLexema().equals(")")) {
                 token = proximo();
+                this.aux--;
                 return true;
             } else {
                 erroSintatico("Faltou)");
@@ -1673,9 +1700,11 @@ public class AnalisadorSintatico {
     public boolean operadorLogico() {
         if (token.getLexema().equals("&&")) {
             token = proximo();
+            this.atterror++;
             return true;
         } else if (token.getLexema().equals("||")) {
             token = proximo();
+            this.atterror++;
             return true;
         } else {
             return false;
@@ -1688,6 +1717,7 @@ public class AnalisadorSintatico {
                 this.aux--;
              }
             if (token.getLexema().equals("&&") || token.getLexema().equals("||")) {
+                this.atterror++;
                 token = proximo();
                 if (expRelacional(1)) {
                     auxLog();
@@ -1725,7 +1755,7 @@ public class AnalisadorSintatico {
             }else if(token.getLexema().equals(")")&&aux==0){
                 return true;
             }else {
-                erroSintatico("Esperava )");
+                //erroSintatico("Esperava )....");
                 return true;
             }
         } else if (expRelacional(opc)) {
@@ -1758,13 +1788,15 @@ public class AnalisadorSintatico {
     }
     private void negx(int opc) {
         if (token.getLexema().equals("(")) {
+            //this.aux++;
             token = proximo();
             expRelacional(opc);
             auxLog();
             if (token.getLexema().equals(")")) {
+              //  this.aux--;
                 token = proximo();
             } else {
-                erroSintatico("Esperava");
+                erroSintatico("Esperava )");
             }
         }
     }
