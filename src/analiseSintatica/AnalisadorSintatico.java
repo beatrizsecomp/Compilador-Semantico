@@ -1681,12 +1681,17 @@ public class AnalisadorSintatico {
             token = proximo();
             this.aux++;
             relacionan(opc);
+            System.out.println("Saiu"+token.getLexema());
             if (token.getLexema().equals(")")) {
                 token = proximo();
                 this.aux--;
                 return true;
             } else {
-                erroSintatico("Faltou)");
+                if(aux>0){
+                erroSintatico("Faltou )");
+                }else if(aux<0){
+                    erroSintatico("Faltou (");
+                }
                 return true;
             }
         } else if (relacionan(opc)) {
@@ -1719,7 +1724,9 @@ public class AnalisadorSintatico {
             if (token.getLexema().equals("&&") || token.getLexema().equals("||")) {
                 this.atterror++;
                 token = proximo();
+                System.out.println("Entrou"+token.getLexema());
                 if (expRelacional(1)) {
+                    System.out.println("Saiu"+token.getLexema());
                     auxLog();
                     return true;
                 } else {

@@ -1,8 +1,9 @@
 program
 function teste () begin
+if(      (a>c)     )then begin
 
-if(      a>c||((fail+c)>c)     )then begin
-a=c;
+a=a>c||(fail+c)*c>c;
+
 end
 
 end
