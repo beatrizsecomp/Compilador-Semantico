@@ -44,7 +44,7 @@ public class Arquivo {
     }
 	public void gravaSaida(ArrayList<Token> tokens, ArrayList<String> erros) throws IOException {
 
-        FileWriter arq = new FileWriter("test/Saida/"+"saida"+ this.localFile  , false);
+        FileWriter arq = new FileWriter("test/Saida/Lexico/"+"saida"+ this.localFile  , false);
         PrintWriter gravar = new PrintWriter(arq);
         for (Token token : tokens) { 
             gravar.println(" " +token.getLinha() + " " + token.getLexema() + " " + token.getTipo());

@@ -1,6 +1,6 @@
 program
 function teste () begin
-if((a>b)||c>d)then begin 
+if((a>=b)||c<=d)then begin 
 a=-a;
 amora(1);
 end

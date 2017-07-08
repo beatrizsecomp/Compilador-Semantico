@@ -16,9 +16,7 @@ function subtracao(integer a,integer b):integer
         a+o;
         false;
         if(a>b)then begin end
-
     end
-    
     function alfa(integer a,integer b):integer
     begin
         boolean c,a,r,d; boolean a,d,r,w=3;

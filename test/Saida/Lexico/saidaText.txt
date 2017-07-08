@@ -103,96 +103,96 @@
  18 begin palavra reservada
  18 end palavra reservada
  19 end palavra reservada
- 21 function palavra reservada
- 21 alfa Identificador
- 21 ( delimitador
- 21 integer palavra reservada
- 21 a Identificador
- 21 , delimitador
- 21 integer palavra reservada
- 21 b Identificador
- 21 ) delimitador
- 21 : delimitador
- 21 integer palavra reservada
- 22 begin palavra reservada
- 23 boolean palavra reservada
- 23 c Identificador
- 23 , delimitador
+ 20 function palavra reservada
+ 20 alfa Identificador
+ 20 ( delimitador
+ 20 integer palavra reservada
+ 20 a Identificador
+ 20 , delimitador
+ 20 integer palavra reservada
+ 20 b Identificador
+ 20 ) delimitador
+ 20 : delimitador
+ 20 integer palavra reservada
+ 21 begin palavra reservada
+ 22 boolean palavra reservada
+ 22 c Identificador
+ 22 , delimitador
+ 22 a Identificador
+ 22 , delimitador
+ 22 r Identificador
+ 22 , delimitador
+ 22 d Identificador
+ 22 ; delimitador
+ 22 boolean palavra reservada
+ 22 a Identificador
+ 22 , delimitador
+ 22 d Identificador
+ 22 , delimitador
+ 22 r Identificador
+ 22 , delimitador
+ 22 w Identificador
+ 22 = operador relacional
+ 22 3 numero
+ 22 ; delimitador
+ 23 write palavra reservada
+ 23 ( delimitador
  23 a Identificador
- 23 , delimitador
- 23 r Identificador
- 23 , delimitador
- 23 d Identificador
- 23 ; delimitador
- 23 boolean palavra reservada
- 23 a Identificador
- 23 , delimitador
- 23 d Identificador
- 23 , delimitador
- 23 r Identificador
- 23 , delimitador
- 23 w Identificador
- 23 = operador relacional
- 23 3 numero
+ 23 ) delimitador
  23 ; delimitador
  24 write palavra reservada
  24 ( delimitador
- 24 a Identificador
+ 24 false palavra reservada
  24 ) delimitador
  24 ; delimitador
  25 write palavra reservada
  25 ( delimitador
- 25 false palavra reservada
+ 25 "a" string
+ 25 , delimitador
+ 25 "b" string
  25 ) delimitador
  25 ; delimitador
  26 write palavra reservada
  26 ( delimitador
  26 "a" string
- 26 , delimitador
- 26 "b" string
  26 ) delimitador
  26 ; delimitador
  27 write palavra reservada
  27 ( delimitador
- 27 "a" string
+ 27 a Identificador
+ 27 + operador aritmetico
+ 27 b Identificador
  27 ) delimitador
  27 ; delimitador
  28 write palavra reservada
  28 ( delimitador
- 28 a Identificador
- 28 + operador aritmetico
- 28 b Identificador
+ 28 subtracao Identificador
+ 28 ( delimitador
+ 28 3 numero
+ 28 , delimitador
+ 28 1 numero
+ 28 ) delimitador
  28 ) delimitador
  28 ; delimitador
- 29 write palavra reservada
+ 29 read palavra reservada
  29 ( delimitador
- 29 subtracao Identificador
- 29 ( delimitador
- 29 3 numero
- 29 , delimitador
- 29 1 numero
- 29 ) delimitador
+ 29 reaal Identificador
  29 ) delimitador
  29 ; delimitador
  30 read palavra reservada
  30 ( delimitador
- 30 reaal Identificador
+ 30 bolean Identificador
  30 ) delimitador
  30 ; delimitador
  31 read palavra reservada
  31 ( delimitador
- 31 bolean Identificador
+ 31 a Identificador
+ 31 , delimitador
+ 31 b Identificador
+ 31 , delimitador
+ 31 c Identificador
  31 ) delimitador
  31 ; delimitador
- 32 read palavra reservada
- 32 ( delimitador
- 32 a Identificador
- 32 , delimitador
- 32 b Identificador
- 32 , delimitador
- 32 c Identificador
- 32 ) delimitador
- 32 ; delimitador
- 34 end palavra reservada
+ 33 end palavra reservada
 
  Nao existem erros lexicos
