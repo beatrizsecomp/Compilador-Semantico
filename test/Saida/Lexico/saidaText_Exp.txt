@@ -1,0 +1,181 @@
+ 1 program palavra reservada
+ 2 function palavra reservada
+ 2 soma Identificador
+ 2 ( delimitador
+ 2 integer palavra reservada
+ 2 a Identificador
+ 2 , delimitador
+ 2 integer palavra reservada
+ 2 b Identificador
+ 2 ) delimitador
+ 2 : delimitador
+ 2 integer palavra reservada
+ 2 begin palavra reservada
+ 3 a Identificador
+ 3 = operador relacional
+ 3 a Identificador
+ 3 + operador aritmetico
+ 3 1 numero
+ 3 ; delimitador
+ 4 v Identificador
+ 4 = operador relacional
+ 4 ( delimitador
+ 4 a Identificador
+ 4 + operador aritmetico
+ 4 1 numero
+ 4 ) delimitador
+ 4 * operador aritmetico
+ 4 ( delimitador
+ 4 b Identificador
+ 4 - operador aritmetico
+ 4 c Identificador
+ 4 ) delimitador
+ 4 ; delimitador
+ 5 teste Identificador
+ 5 = operador relacional
+ 5 ( delimitador
+ 5 ( delimitador
+ 5 a Identificador
+ 5 - operador aritmetico
+ 5 c Identificador
+ 5 ) delimitador
+ 5 ) delimitador
+ 5 ; delimitador
+ 6 teste2 Identificador
+ 6 = operador relacional
+ 6 ( delimitador
+ 6 ( delimitador
+ 6 a Identificador
+ 6 * operador aritmetico
+ 6 b Identificador
+ 6 ) delimitador
+ 6 > operador relacional
+ 6 c Identificador
+ 6 ) delimitador
+ 6 ; delimitador
+ 7 teste3 Identificador
+ 7 = operador relacional
+ 7 ( delimitador
+ 7 a Identificador
+ 7 + operador aritmetico
+ 7 b Identificador
+ 7 > operador relacional
+ 7 c Identificador
+ 7 || operador logico
+ 7 uni Identificador
+ 7 < operador relacional
+ 7 c Identificador
+ 7 ) delimitador
+ 7 ; delimitador
+ 8 mk Identificador
+ 8 = operador relacional
+ 8 ( delimitador
+ 8 ( delimitador
+ 8 a Identificador
+ 8 + operador aritmetico
+ 8 b Identificador
+ 8 ) delimitador
+ 8 > operador relacional
+ 8 c Identificador
+ 8 || operador logico
+ 8 ( delimitador
+ 8 nj Identificador
+ 8 > operador relacional
+ 8 n Identificador
+ 8 ) delimitador
+ 8 ) delimitador
+ 8 ; delimitador
+ 9 blu Identificador
+ 9 = operador relacional
+ 9 1 numero
+ 9 + operador aritmetico
+ 9 1 numero
+ 9 ; delimitador
+ 10 opr Identificador
+ 10 = operador relacional
+ 10 1 numero
+ 10 + operador aritmetico
+ 10 2 numero
+ 10 * operador aritmetico
+ 10 4 numero
+ 10 -7 numero
+ 10 ; delimitador
+ 11 opr2 Identificador
+ 11 = operador relacional
+ 11 ( delimitador
+ 11 a Identificador
+ 11 + operador aritmetico
+ 11 b Identificador
+ 11 ) delimitador
+ 11 * operador aritmetico
+ 11 ( delimitador
+ 11 a Identificador
+ 11 + operador aritmetico
+ 11 1 numero
+ 11 ) delimitador
+ 11 ; delimitador
+ 12 lol Identificador
+ 12 = operador relacional
+ 12 ( delimitador
+ 12 a Identificador
+ 12 > operador relacional
+ 12 b Identificador
+ 12 ) delimitador
+ 12 ; delimitador
+ 13 np Identificador
+ 13 = operador relacional
+ 13 ( delimitador
+ 13 a Identificador
+ 13 + operador aritmetico
+ 13 b Identificador
+ 13 != operador relacional
+ 13 c Identificador
+ 13 - operador aritmetico
+ 13 d Identificador
+ 13 ) delimitador
+ 13 ; delimitador
+ 14 nm Identificador
+ 14 = operador relacional
+ 14 ( delimitador
+ 14 a Identificador
+ 14 % operador aritmetico
+ 14 b Identificador
+ 14 <= operador relacional
+ 14 c Identificador
+ 14 / Operador_Arimetico
+ 14 d Identificador
+ 14 ) delimitador
+ 14 ; delimitador
+ 15 integer palavra reservada
+ 15 a Identificador
+ 15 = operador relacional
+ 15 1 numero
+ 15 + operador aritmetico
+ 15 1 numero
+ 15 ; delimitador
+ 16 n Identificador
+ 16 = operador relacional
+ 16 ! operador logico
+ 16 ( delimitador
+ 16 a Identificador
+ 16 ) delimitador
+ 16 ; delimitador
+ 17 boolean palavra reservada
+ 17 n Identificador
+ 17 = operador relacional
+ 17 true palavra reservada
+ 17 ; delimitador
+ 18 n Identificador
+ 18 = operador relacional
+ 18 trt Identificador
+ 18 ( delimitador
+ 18 ) delimitador
+ 18 ; delimitador
+ 19 trt Identificador
+ 19 ( delimitador
+ 19 1 numero
+ 19 ) delimitador
+ 19 ; delimitador
+ 20 end palavra reservada
+
+ Nao existem erros lexicos

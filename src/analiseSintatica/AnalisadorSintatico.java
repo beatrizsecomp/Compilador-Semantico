@@ -1545,7 +1545,7 @@ public class AnalisadorSintatico {
     }
 
     private boolean termo() {
-        if (token.getLexema().equals("*") || token.getLexema().equals('/') || token.getLexema().equals("%")) {
+        if (token.getLexema().equals("*") || token.getLexema().equals("/") || token.getLexema().equals("%")) {
             this.atterror++;
             return true;
         }
@@ -1632,11 +1632,12 @@ public class AnalisadorSintatico {
                 this.aux--;
              }
             System.out.println("Um"+token.getLexema());
-                if (token.getLexema().equals("*") || token.getLexema().equals('/') || token.getLexema().equals("%")|| token.getLexema().equals("-")|| token.getLexema().equals("+")) {
+                if (token.getLexema().equals("*") || token.getLexema().equals("/") || token.getLexema().equals("%")|| token.getLexema().equals("-")|| token.getLexema().equals("+")) {
                         token = proximo();
                         this.atterror++;
                         exp();
                 }
+                //
             if (operadorRelacional()) {
                 this.atterror++;
                 if (exp()) {
@@ -1687,12 +1688,7 @@ public class AnalisadorSintatico {
                 this.aux--;
                 return true;
             } else {
-                if(aux>0){
-                erroSintatico("Faltou )");
-                }else if(aux<0){
-                    erroSintatico("Faltou (");
-                }
-                return true;
+                 return true;
             }
         } else if (relacionan(opc)) {
             return true;
@@ -1748,6 +1744,8 @@ public class AnalisadorSintatico {
             token = proximo();
             negx(opc);
             auxLog();
+            
+            validPare();
             return true;
         } else if (token.getLexema().equals("(")) {
             token = proximo();
@@ -1756,11 +1754,13 @@ public class AnalisadorSintatico {
             if (token.getLexema().equals(")")&&aux!=0) {
                 this.aux--;
                 token = proximo();
+                validPare();
                 return true;
             }else if(token.getLexema().equals(")")&&aux==0){
+                validPare();
                 return true;
             }else {
-                //erroSintatico("Esperava )....");
+                validPare();
                 return true;
             }
         } else if (expRelacional(opc)) {
@@ -1779,6 +1779,16 @@ public class AnalisadorSintatico {
             
         } else {
             return false;
+        }
+        
+    }
+    private void validPare(){
+        if(aux>0){
+            erroSintatico("Esperava )");
+        }else if(aux<0){
+            erroSintatico("Esperava (");
+        }else{
+            System.out.println("Parenteses balenceados"+token.getLexema());
         }
     }
     private void auxLog() {

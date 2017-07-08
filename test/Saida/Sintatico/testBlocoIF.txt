@@ -1,5 +1,3 @@
-Erro: Linha: 4 Esperava begin
-
 Erro: Linha: 10 Esperava um operador relacional
 
 Erro: Linha: 23 Esperava then

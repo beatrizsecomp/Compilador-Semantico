@@ -1,0 +1,22 @@
+program
+function soma(integer a,integer b):integer begin
+ a = a+1;
+ v = (a+1)*(b-c);
+ teste = ((a-c));
+ teste2 = ((a*b)>c);
+ teste3 = (a+b>c || uni<c);
+ mk = ((a+b)>c || (nj>n));
+blu = 1+1;
+opr = 1+2*4-7;
+opr2 = (a+b)*(a+1);
+lol = (a>b);
+np = (a+b!=c-d);
+nm = (a%b<=c/d);
+integer a = 1+1;
+n = !(a);
+boolean n = true;
+n = trt();
+trt(1);
+
+
+end
