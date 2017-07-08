@@ -1,9 +1,34 @@
 program
 function teste () begin
-if(      (a>c)     )then begin
-
-a=a>c||(fail+c)*c>c;
-
+if((a>b)||c>d)then begin 
+a=-a;
+amora(1);
 end
-
+if(!((a>c)||(a>b)))then begin
+a=(a+b);
+amora(1);
+if(a+b)then begin
+id="erro";
+end
+if((a==b)||c==1)then begin
+end
+if((a!=b))then begin
+teste();
+a;
+a=1;
+end 
+else begin
+a=-1;
+end
+if(a>b||c>d)begin
+ecomp=1;
+teste();
+a=["a"];
+end
+if(a>b||c>d||n>c&&x!=b||b==c)then beg
+end
+if(!(a<=b))the begin
+a=n;
+a+b;
+end
 end

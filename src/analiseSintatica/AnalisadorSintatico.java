@@ -666,7 +666,7 @@ public class AnalisadorSintatico {
         if (token.getTipo().equals("char") || token.getTipo().equals("string") || token.getLexema().equals("false") || token.getLexema().equals("true")) {
             token = proximo();
             return true;
-        } else if (token.getLexema().equals("!") ||token.getTipo().equals("Identificador") || token.getTipo().equals("numero") || token.getLexema().equals("(")) {
+        } else if (token.getLexema().equals("-")||token.getLexema().equals("!") ||token.getTipo().equals("Identificador") || token.getTipo().equals("numero") || token.getLexema().equals("(")) {
            expLogica(0);
             return true;
         } else {
@@ -1724,9 +1724,7 @@ public class AnalisadorSintatico {
             if (token.getLexema().equals("&&") || token.getLexema().equals("||")) {
                 this.atterror++;
                 token = proximo();
-                System.out.println("Entrou"+token.getLexema());
                 if (expRelacional(1)) {
-                    System.out.println("Saiu"+token.getLexema());
                     auxLog();
                     return true;
                 } else {
