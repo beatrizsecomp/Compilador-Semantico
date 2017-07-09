@@ -1,0 +1,24 @@
+ 1 program palavra reservada
+ 2 function palavra reservada
+ 2 teste Identificador
+ 2 ( delimitador
+ 2 ) delimitador
+ 2 begin palavra reservada
+ 3 if palavra reservada
+ 3 ( delimitador
+ 3 c Identificador
+ 3 > operador relacional
+ 3 d Identificador
+ 3 > operador relacional
+ 3 ( delimitador
+ 3 a Identificador
+ 3 + operador aritmetico
+ 3 b Identificador
+ 3 ) delimitador
+ 3 ) delimitador
+ 3 then palavra reservada
+ 3 begin palavra reservada
+ 4 end palavra reservada
+ 5 end palavra reservada
+
+ Nao existem erros lexicos

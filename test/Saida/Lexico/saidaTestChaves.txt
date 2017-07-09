@@ -1,0 +1,93 @@
+ 1 program palavra reservada
+ 2 function palavra reservada
+ 2 teste Identificador
+ 2 ( delimitador
+ 2 ) delimitador
+ 2 begin palavra reservada
+ 3 if palavra reservada
+ 3 ( delimitador
+ 3 ( delimitador
+ 3 c Identificador
+ 3 * operador aritmetico
+ 3 d Identificador
+ 3 ) delimitador
+ 3 > operador relacional
+ 3 a Identificador
+ 3 ) delimitador
+ 3 then palavra reservada
+ 3 begin palavra reservada
+ 4 a Identificador
+ 4 = operador relacional
+ 4 ( delimitador
+ 4 a Identificador
+ 4 + operador aritmetico
+ 4 v Identificador
+ 4 ) delimitador
+ 4 ; delimitador
+ 5 b Identificador
+ 5 = operador relacional
+ 5 c Identificador
+ 5 + operador aritmetico
+ 5 v Identificador
+ 5 + operador aritmetico
+ 5 ( delimitador
+ 5 a Identificador
+ 5 * operador aritmetico
+ 5 b Identificador
+ 5 ) delimitador
+ 5 ; delimitador
+ 6 e Identificador
+ 6 = operador relacional
+ 6 ( delimitador
+ 6 ( delimitador
+ 6 b Identificador
+ 6 > operador relacional
+ 6 a Identificador
+ 6 ) delimitador
+ 6 ) delimitador
+ 6 ; delimitador
+ 7 f Identificador
+ 7 = operador relacional
+ 7 ( delimitador
+ 7 a Identificador
+ 7 + operador aritmetico
+ 7 b Identificador
+ 7 ) delimitador
+ 7 + operador aritmetico
+ 7 ( delimitador
+ 7 c Identificador
+ 7 * operador aritmetico
+ 7 b Identificador
+ 7 ) delimitador
+ 7 > operador relacional
+ 7 j Identificador
+ 7 ; delimitador
+ 8 o Identificador
+ 8 = operador relacional
+ 8 ( delimitador
+ 8 ( delimitador
+ 8 a Identificador
+ 8 + operador aritmetico
+ 8 b Identificador
+ 8 ) delimitador
+ 8 + operador aritmetico
+ 8 c Identificador
+ 8 ) delimitador
+ 8 ; delimitador
+ 9 if palavra reservada
+ 9 ( delimitador
+ 9 ( delimitador
+ 9 ( delimitador
+ 9 a Identificador
+ 9 > operador relacional
+ 9 o Identificador
+ 9 ) delimitador
+ 9 ) delimitador
+ 9 ) delimitador
+ 9 then palavra reservada
+ 9 begin palavra reservada
+ 10 end palavra reservada
+ 11 end palavra reservada
+ 12 end palavra reservada
+
+ Nao existem erros lexicos

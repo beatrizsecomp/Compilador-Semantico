@@ -1,0 +1,12 @@
+program
+function teste () begin
+if ((c*d)>a)then begin
+a=(a+v);
+b= c+v+(a*b);
+e = ( (b>a) );
+f = (a+b)+(c*b) >j;   
+o =  ((a+b)+c);
+if (((a>o))) then begin
+end 
+end
+end
