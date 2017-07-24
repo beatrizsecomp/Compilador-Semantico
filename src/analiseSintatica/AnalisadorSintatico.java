@@ -2,13 +2,25 @@ package analiseSintatica;
 
 import java.util.ArrayList;
 import analiseLexica.Token;
+import analiseSemantica.Variavel;
+import analiseSemantica.Funcao;
 
 public class AnalisadorSintatico {
 
     private Token token; // Proximo token da lista
     private ArrayList<Token> tokens;    //lista com os tokens recebidos
     private ArrayList<String> erros;    //lista com os erros encontrados na an�lise.
-    private int contTokens = 0;        
+    private ArrayList<String> errosSemanticos;    //lista com os erros encontrados na an�lise.
+    
+    private ArrayList<Funcao> funcoes = new ArrayList<>();
+    private ArrayList<Variavel> variaveis = new ArrayList<>();
+
+    private  ArrayList<Variavel> variavel_global = new ArrayList<>();
+    private ArrayList<Variavel> variavel_local = new ArrayList<>();
+    private ArrayList<Variavel> constante = new ArrayList<>();
+		
+    private int contTokens = 0;       
+    private String tip;
     private int aux = 0;
     private int atterror=0;
 
@@ -17,6 +29,8 @@ public class AnalisadorSintatico {
         this.tokens = tokens; //recebe os tokens vindos do lexico.
         token = proximo();  //recebe o primeiro token da lista
         erros = new ArrayList<>(); //cria a lista de erros
+        errosSemanticos = new ArrayList<>();
+        
 
         programa();
 
@@ -65,6 +79,13 @@ public class AnalisadorSintatico {
             erros.add(erro);
         }
     }
+    private void erroSemantico(String erro) {
+        if (!token.getLexema().equals("EOF")) {
+            errosSemanticos.add("Linha: " + (token.getLinha()) + " " + erro + "\n"); //gera o erro normalizado e adiciona na lista de erros.
+        } else {
+            errosSemanticos.add(erro);
+        }
+    }
 
     private void terminal(String esperado) {
         if ((!token.getLexema().equals("EOF")) && token.getLexema().equals(esperado)) { //verifica se o token atual e o que era esperado
@@ -85,6 +106,11 @@ public class AnalisadorSintatico {
     public ArrayList<String> getErros() {
         return this.erros;
     }
+    public ArrayList<String> getErrosSemanticos() {
+        return this.errosSemanticos;
+    }
+    
+    
     //Bloco Variaveis globais
     private void blocoVar() {
         token = proximo();
@@ -110,8 +136,12 @@ public class AnalisadorSintatico {
     }
 
     private void corpoVar() {
+     Variavel variavel = new Variavel();
         while (!(token.getLexema().equals("end") || token.getLexema().equals("const") || token.getLexema().equals("function"))) {
             if (tipo()) {
+                variavel.setTipo(token.getLexema());
+                tip = token.getLexema();
+                token = proximo();
                 declaracaoVariaveis();
                 if (token.getLexema().equals("end") || token.getTipo().equals("Identificador") || token.getTipo().equals(",") || token.getTipo().equals(";")) {
                     break;
@@ -126,6 +156,7 @@ public class AnalisadorSintatico {
                             return;
                         }
                         if (tipo()) {
+                            token = proximo();
                             declaracaoVariaveis();
                         }
                     }
@@ -162,6 +193,7 @@ public class AnalisadorSintatico {
         padraoVariavel();
         // Caso ache um tipo apos um id e pq faltou ;   
         if (tipo()) {
+            token = proximo();
             erroSintatico("Faltou ; ");
             declaracaoVariaveis();
         } else if (!(pontoVirgula())) {
@@ -170,6 +202,7 @@ public class AnalisadorSintatico {
                 return;
             }
             if (tipo()) {
+                token = proximo();
                 declaracaoVariaveis();
             } else if (token.getTipo().equals("Identificador")) {
                 erroSintatico("Esperava um tipo primitivo aqui");
@@ -183,7 +216,14 @@ public class AnalisadorSintatico {
     }
     // id ou id,id ou id[1] ou id =1
     private void padraoVariavel() {
-        if (identificador("Identificador")) {
+        if (token.getTipo().equals("Identificador")) {
+              Variavel variavel = new Variavel();
+              variavel.setTipo(tip);
+              variavel.setNome(token.getLexema());
+              System.out.println("@variaveis "+variavel.getNome()+" "+variavel.getTipo());
+              variavel_global.add(variavel);
+                
+             token = proximo();
             opcVariaveisGlo();
         } else {
             if (token.getLexema().equals("=")) {
@@ -301,6 +341,7 @@ public class AnalisadorSintatico {
     private void corpoConst() {
         while (!(token.getLexema().equals("end") || token.getLexema().equals("function") || token.getLexema().equals("EOF"))) {
             if (tipo()) {
+                token = proximo();
                 declaracao_const();
                 if (token.getLexema().equals("end") || token.getTipo().equals("Identificador") || token.getTipo().equals(",") || token.getTipo().equals(";") || token.getLexema().equals("function")) {
                     if (!token.getLexema().equals("end")) {
@@ -337,11 +378,13 @@ public class AnalisadorSintatico {
         if (token.getLexema().equals(";")) {
             token = proximo();
             if (tipo()) {
+                token = proximo();
                 declaracao_const();
             }
         } else {
             erroSintatico("Esperava ;");
             if (tipo()) {
+                token = proximo();
                 declaracao_const();
             }
         }
@@ -363,6 +406,7 @@ public class AnalisadorSintatico {
                 } else {
                     erroSintatico("atribuicao de tipo incompativel"); //gera o erro se o tipo do token nao e o esperado
                     if (tipo()) {
+                        token = proximo();
                         declaracao_const();
                     } else if (!(token.getLexema().equals("end") || token.getLexema().equals(";"))) {
                         token = proximo();
@@ -387,6 +431,7 @@ public class AnalisadorSintatico {
         } else {
             erroSintatico("Esperava Id");
             if (tipo()) {
+                token = proximo();
                 declaracao_const();
             }
             if (token.getLexema().equals("=")) {
@@ -556,6 +601,7 @@ public class AnalisadorSintatico {
         } else if (token.getLexema().equals("while")) {
             _while();
         } else if (tipo()) {
+            token = proximo();
             nvariaveisL();
         }else if(token.getTipo().equals("numero")){
             exp2();
@@ -1067,21 +1113,21 @@ public class AnalisadorSintatico {
     private boolean tipo() {
         switch (token.getLexema()) {
             case "integer":
-                terminal("integer");
+                //terminal("integer");
                 return true;
 
             case "string":
-                terminal("string");
+                //terminal("string");
                 return true;
 
             case "real":
-                terminal("real");
+                //terminal("real");
                 return true;
             case "boolean":
-                terminal("boolean");
+                //terminal("boolean");
                 return true;
             case "char":
-                terminal("char");
+                //terminal("char");
                 return true;
             default:
                 return false;
@@ -1623,15 +1669,11 @@ public class AnalisadorSintatico {
         }
     }
     private boolean relacionan(int opc) {
-        System.out.println("Entrou"+token.getLexema());
-        if (exp()) {
-            System.out.println("Pos ecp"+token.getLexema());
-            System.out.println(" aqui"+aux);
+       if (exp()) {
             if(token.getLexema().equals(")")&&aux!=0){
                 token = proximo();
                 this.aux--;
              }
-            System.out.println("Um"+token.getLexema());
                 if (token.getLexema().equals("*") || token.getLexema().equals("/") || token.getLexema().equals("%")|| token.getLexema().equals("-")|| token.getLexema().equals("+")) {
                         token = proximo();
                         this.atterror++;
@@ -1662,7 +1704,6 @@ public class AnalisadorSintatico {
                 }
             } else {
                 if(opc==1){
-                    System.out.println("Toooo"+token.getLexema());
                 erroSintatico("Esperava um operador relacional");
                 if (token.getLexema().equals("||") || token.getLexema().equals("&&")) {
                     token = proximo();
@@ -1682,7 +1723,6 @@ public class AnalisadorSintatico {
             token = proximo();
             this.aux++;
             relacionan(opc);
-            System.out.println("Saiu"+token.getLexema());
             if (token.getLexema().equals(")")) {
                 token = proximo();
                 this.aux--;
@@ -1788,8 +1828,7 @@ public class AnalisadorSintatico {
         }else if(aux<0){
             erroSintatico("Esperava (");
         }else{
-            System.out.println("Parenteses balenceados"+token.getLexema());
-        }
+            }
     }
     private void auxLog() {
         if (token.getLexema().equals("&&") || token.getLexema().equals("||")) {
