@@ -1,198 +1,45 @@
  1 program palavra reservada
- 2 function palavra reservada
- 2 soma Identificador
- 2 ( delimitador
- 2 integer palavra reservada
- 2 a Identificador
- 2 , delimitador
- 2 integer palavra reservada
- 2 b Identificador
- 2 ) delimitador
- 2 : delimitador
- 2 integer palavra reservada
- 3 begin palavra reservada
- 4 soma Identificador
- 4 ( delimitador
- 4 a Identificador
- 4 , delimitador
- 4 b Identificador
- 4 ) delimitador
- 4 ; delimitador
- 5 soma Identificador
- 5 -> retorno
- 5 ( delimitador
- 5 a Identificador
- 5 + operador aritmetico
- 5 b Identificador
- 5 ) delimitador
+ 3 function palavra reservada
+ 3 subtracao Identificador
+ 3 ( delimitador
+ 3 integer palavra reservada
+ 3 a Identificador
+ 3 , delimitador
+ 3 integer palavra reservada
+ 3 b Identificador
+ 3 ) delimitador
+ 3 : delimitador
+ 3 integer palavra reservada
+ 4 begin palavra reservada
+ 5 integer palavra reservada
+ 5 i_3a Identificador
+ 5 = operador relacional
+ 5 0 numero
  5 ; delimitador
- 6 end palavra reservada
- 7 function palavra reservada
- 7 beta Identificador
- 7 ( delimitador
+ 6 integer palavra reservada
+ 6 a Identificador
+ 6 = operador relacional
+ 6 10 numero
+ 6 ; delimitador
  7 integer palavra reservada
- 7 a Identificador
- 7 , delimitador
- 7 integer palavra reservada
- 7 b Identificador
- 7 ) delimitador
- 7 : delimitador
- 7 integer palavra reservada
- 8 begin palavra reservada
- 9 soma Identificador
+ 7 c Identificador
+ 7 ; delimitador
+ 8 integer palavra reservada
+ 8 c Identificador
+ 8 ; delimitador
+ 9 if palavra reservada
  9 ( delimitador
  9 a Identificador
- 9 , delimitador
+ 9 > operador relacional
  9 b Identificador
  9 ) delimitador
- 9 ; delimitador
- 10 end palavra reservada
- 11 function palavra reservada
- 11 subtracao Identificador
- 11 ( delimitador
- 11 integer palavra reservada
- 11 a Identificador
- 11 , delimitador
- 11 integer palavra reservada
- 11 b Identificador
- 11 ) delimitador
- 11 : delimitador
- 11 integer palavra reservada
- 12 begin palavra reservada
- 13 integer palavra reservada
- 13 i_3a Identificador
- 13 = operador relacional
- 13 0 numero
- 13 , delimitador
- 13 a Identificador
- 13 = operador relacional
- 13 3 numero
- 13 , delimitador
- 13 a Identificador
- 13 = operador relacional
- 13 8 numero
- 13 ; delimitador
- 14 integer palavra reservada
- 14 a Identificador
- 14 , delimitador
- 14 a Identificador
- 14 , delimitador
- 14 a Identificador
- 14 ; delimitador
- 15 subtracao Identificador
- 15 -> retorno
- 15 ( delimitador
- 15 a Identificador
- 15 - operador aritmetico
- 15 b Identificador
- 15 ) delimitador
- 15 ; delimitador
- 16 a Identificador
- 16 + operador aritmetico
- 16 o Identificador
- 16 ; delimitador
- 17 false palavra reservada
- 17 ; delimitador
- 18 if palavra reservada
- 18 ( delimitador
- 18 a Identificador
- 18 > operador relacional
- 18 b Identificador
- 18 ) delimitador
- 18 then palavra reservada
- 18 begin palavra reservada
- 18 end palavra reservada
- 19 end palavra reservada
- 20 function palavra reservada
- 20 alfa Identificador
- 20 ( delimitador
- 20 integer palavra reservada
- 20 a Identificador
- 20 , delimitador
- 20 integer palavra reservada
- 20 b Identificador
- 20 ) delimitador
- 20 : delimitador
- 20 integer palavra reservada
- 21 begin palavra reservada
- 22 boolean palavra reservada
- 22 c Identificador
- 22 , delimitador
- 22 a Identificador
- 22 , delimitador
- 22 r Identificador
- 22 , delimitador
- 22 d Identificador
- 22 ; delimitador
- 22 boolean palavra reservada
- 22 a Identificador
- 22 , delimitador
- 22 d Identificador
- 22 , delimitador
- 22 r Identificador
- 22 , delimitador
- 22 w Identificador
- 22 = operador relacional
- 22 3 numero
- 22 ; delimitador
- 23 write palavra reservada
- 23 ( delimitador
- 23 a Identificador
- 23 ) delimitador
- 23 ; delimitador
- 24 write palavra reservada
- 24 ( delimitador
- 24 false palavra reservada
- 24 ) delimitador
- 24 ; delimitador
- 25 write palavra reservada
- 25 ( delimitador
- 25 "a" string
- 25 , delimitador
- 25 "b" string
- 25 ) delimitador
- 25 ; delimitador
- 26 write palavra reservada
- 26 ( delimitador
- 26 "a" string
- 26 ) delimitador
- 26 ; delimitador
- 27 write palavra reservada
- 27 ( delimitador
- 27 a Identificador
- 27 + operador aritmetico
- 27 b Identificador
- 27 ) delimitador
- 27 ; delimitador
- 28 write palavra reservada
- 28 ( delimitador
- 28 subtracao Identificador
- 28 ( delimitador
- 28 3 numero
- 28 , delimitador
- 28 1 numero
- 28 ) delimitador
- 28 ) delimitador
- 28 ; delimitador
- 29 read palavra reservada
- 29 ( delimitador
- 29 reaal Identificador
- 29 ) delimitador
- 29 ; delimitador
- 30 read palavra reservada
- 30 ( delimitador
- 30 bolean Identificador
- 30 ) delimitador
- 30 ; delimitador
- 31 read palavra reservada
- 31 ( delimitador
- 31 a Identificador
- 31 , delimitador
- 31 b Identificador
- 31 , delimitador
- 31 c Identificador
- 31 ) delimitador
- 31 ; delimitador
- 33 end palavra reservada
+ 9 then palavra reservada
+ 9 begin palavra reservada
+ 10 ab Identificador
+ 10 = operador relacional
+ 10 3 numero
+ 10 ; delimitador
+ 11 end palavra reservada
+ 13 end palavra reservada
 
  Nao existem erros lexicos
