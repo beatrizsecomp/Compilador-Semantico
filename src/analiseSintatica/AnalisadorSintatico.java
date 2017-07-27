@@ -348,8 +348,8 @@ public class AnalisadorSintatico {
                 expLogica(0); 
             } else {
                 token = proximo();
-                if (!token.getLexema().equals(";")) {
-                    erroSintatico("Atribuicao incorreta: " + token.getLexema());
+           if (!(token.getLexema().equals(";")||token.getLexema().equals(","))) {
+                         erroSintatico("Atribuicao incorreta: " + token.getLexema());
                     while (!(verifica() || token.getLexema().equals(";") || token.getLexema().equals("EOF"))) {
                         erroSintatico("Atribuicao incorreta: " + token.getLexema());
                     }
