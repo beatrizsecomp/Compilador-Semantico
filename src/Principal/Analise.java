@@ -46,7 +46,7 @@ public class Analise {
 			System.out.println("Analisando: " + arquivo.getLocalFile());
 			sintatico.analise(listaTokens);
 			arquivo.gravaSaidaSintatico(sintatico.getErros());
-			
+			arquivo.gravaSaidaSemantico(sintatico.getErrosSemanticos());
         }
        }
 }

@@ -25,6 +25,7 @@ public class AnalisadorSintatico {
     private String tip;
     private int aux = 0;
     private int atterror=0;
+    private int verific=0;
 
     public void analise(ArrayList<Token> tokens) {
 
@@ -273,62 +274,77 @@ public class AnalisadorSintatico {
     }
 
     private void opcVariavel(Variavel local,String tipoVar) {
-        if (token.getLexema().equals("[")) {
-            declaracaoMatriz();
-        }
-        if (token.getLexema().equals("=")) {
-            token = proximo();
-            System.out.println("entrou aqui" + token.getLexema());
-            igualdade(local,tipoVar);
-        }  if (token.getLexema().equals(",")) {
-            virgulaL(local,tipoVar);
-        } else if (token.getLexema().equals(";")) {
-        	Variavel local_test = local;
-        	local_test.setTipo(tipoVar);   
-            if (!variaveisContains(local_test)){
-            	local.setTipo(tipoVar);
-	        	System.out.println("variavel local sem atribuição "+ local.getNome() + local.getTipo());
-	        	variavel_local.add(local);
-            }
-            else{
-            	System.out.println("Variavel "+ local_test.getNome() +" já existe");
-            	erroSemantico("Variavel já existe");
-            }
-            variaveisAll();
-            
-        }
+    	
+	        if (token.getLexema().equals("[")) {
+	            declaracaoMatriz();
+	        }
+	        if (token.getLexema().equals("=")) {
+	            token = proximo();
+	            System.out.println("entrou aqui" + token.getLexema());
+	            igualdade(local,tipoVar);
+	        } 
+	        if (verific == 0){
+	        	 if(!variavel_local.contains(local)){
+	        		 local.setTipo(tipoVar);
+	        		 variavel_local.add(local);
+	        		 variaveisAll();
+	        	 }
+	        	 else{
+	        		 erroSemantico("A variavel já existe ");
+	        	 }
+	        		
+	        		 
+	        }
+	        
+	        if (token.getLexema().equals(",")) {
+	            virgulaL(local,tipoVar);
+	        } else if (token.getLexema().equals(";")) {
+	        	  
+	        }
     }
 
     private void igualdade(Variavel local,String tipoVar) {
 
         System.out.println(" tipo que entra na igualdade" +token.getTipo()+ token.getLexema());
-
+        verific=0;
         if (token.getLexema().equals("[")) {
             atribuicaoMatriz();
         } //Se for uma atribuicao normal);
         else if (token.getTipo().equals("Identificador") || token.getTipo().equals("char") || token.getTipo().equals("string") || token.getTipo().equals("numero") || token.getLexema().equals("false") || token.getLexema().equals("true")||token.getLexema().equals("(")) {
-            if (token.getTipo().equals("numero") || token.getTipo().equals("Identificador")||token.getLexema().equals("(")) {
-            	Variavel local_test = local;
-            	local_test.setTipo(tipoVar);
-            	System.out.println("tipo do dado é :"+ token.getTipo());
-            	System.out.println(local_test.getNome()+ " ei ta aqui o test");
-                if (!variavel_local.contains(local_test)){
+	        System.out.println("beeafafwwa "+ token.getTipo() + tipoVar);
+	       
+        	if( tipoVar.equals("string") && token.getTipo().equals("string")){
+        		verific=0;
+	        	
+	        }
+        	else if( tipoVar.equals("char") && token.getTipo().equals("char")){
+	        	System.out.println("ok ATT"+token.getLexema());
+	        	verific=0;
+	        	
+	        }
+        	else if( tipoVar.equals("boolean") && token.getLexema().equals("true") || token.getLexema().equals("false")){
+	        	System.out.println("ok ATT"+token.getLexema());
+	        	verific=0;
+	        }
+	        else if (!(token.getTipo().equals("numero") || token.getTipo().equals("Identificador")||token.getLexema().equals("("))){
+	        	erroSemantico("atribuição de tipo "+ tipoVar +" incompativel"+token.getLexema());
+	        	verific=1;
+	        }
+        
+        
+        	if (token.getTipo().equals("numero") || token.getTipo().equals("Identificador")||token.getLexema().equals("(")) {
+            	
+                
 	            	if(tipoVar.equals("integer") && token.getTipo().equals("numero")){
-	                	local.setTipo(tipoVar);
-		                System.out.println("@variaveis locaais normal "+local.getNome()+" "+local.getTipo());
-		                variavel_local.add(local);
+	            		verific=0;
+	            		System.out.println("ok ATT"+token.getLexema());
 	               	}
+	                else{
+	                	erroSemantico("atribuição de tipo inteiro incompativel ");
+	                	verific=1;
+	                }
+	                
 	            	
-	            	else{
-	            		System.out.println("Variavel não corresponde ao tipo de dado atribuido");
-	            		erroSemantico("Variavel não corresponde ao tipo de dado atribuido");
-	            		
-	            	}
-                }
-                else{
-                	System.out.println("variavel "+ local_test.getNome() + " já existe");
-                	erroSemantico("Variavel já existe");
-                }
                 expLogica(0); 
             } else {
                 token = proximo();
@@ -340,6 +356,7 @@ public class AnalisadorSintatico {
                 }
 
             }
+        	
 
         } //Se for uma declaracao de variaveis locais pode receber um id e chamada de funcoes
         else {
@@ -685,9 +702,9 @@ public class AnalisadorSintatico {
         if (token.getTipo().equals("Identificador")) {
             Variavel local = new Variavel();
         	local.setNome(token.getLexema());
-            token = proximo();
-
+        	token = proximo();
             opcVariavel(local,tipoVar);
+        	
         } else {
             erroSintatico("Esperava Id");
         }
@@ -697,8 +714,6 @@ public class AnalisadorSintatico {
     private void virgulaL(Variavel local,String tipoVar) {
         
         if (token.getLexema().equals(",")) {
-        	local.setTipo(tipoVar);
-        	variavel_local.add(local);
             token = proximo();
             variaveisLocais(tipoVar);
         }
@@ -708,11 +723,12 @@ public class AnalisadorSintatico {
         if (token.getTipo().equals("Identificador")) {
             //token = proximo();
         	//mdei
-        	Variavel local = new Variavel();
-        	 local.setTipo(token.getTipo());
-             local.setNome(token.getLexema());
-             System.out.println("@variaveis locaais "+local.getNome()+" "+local.getTipo());
-             variavel_global.add(local);
+        	//if (variavel_local.contains())
+        	//Variavel local = new Variavel();
+        	// local.setTipo(token.getTipo());
+            // local.setNome(token.getLexema());
+            // System.out.println("@variaveis locaais "+local.getNome()+" "+local.getTipo());
+            // variavel_global.add(local);
             this.atterror=0;
             expLogica(0);
             if (token.getLexema().equals("[")) {
@@ -1922,7 +1938,7 @@ public class AnalisadorSintatico {
         for(int i = 0; i < variavel_local.size(); i++) //cars name of arraylist
         {	
 
-            if (variavel_local.get(i).getNome().equals(local.getNome()) && variavel_local.get(i).getTipo().equals(local.getTipo())){
+            if (variavel_local.get(i).getNome().equals(local.getNome())){
             	return true;
             }  
             
