@@ -12,12 +12,15 @@ package analiseSemantica;
 public class Variavel {
     private String tipo;
     private String nome;
+    private int tamanho;
     
 
     	public String getTipo() {
 		return tipo;
 	}
-
+        public int getTamanho(){
+            return tamanho;
+        }
 	public String getNome() {
 		return nome;
 	}
@@ -27,6 +30,9 @@ public class Variavel {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+        public void setTamanho(int tamanho){
+            this.tamanho = tamanho;
+        }
 
     
 }
