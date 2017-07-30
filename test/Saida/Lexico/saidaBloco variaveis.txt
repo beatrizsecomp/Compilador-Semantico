@@ -1,0 +1,28 @@
+ 1 program palavra reservada
+ 2 var palavra reservada
+ 2 begin palavra reservada
+ 3 integer palavra reservada
+ 3 a Identificador
+ 3 ; delimitador
+ 4 real palavra reservada
+ 4 b Identificador
+ 4 = operador relacional
+ 4 1 numero
+ 4 , delimitador
+ 4 c Identificador
+ 4 , delimitador
+ 4 d Identificador
+ 4 ; delimitador
+ 5 string palavra reservada
+ 5 a Identificador
+ 5 = operador relacional
+ 5 "am" string
+ 5 ; delimitador
+ 6 char palavra reservada
+ 6 n Identificador
+ 6 = operador relacional
+ 6 'a' char
+ 6 ; delimitador
+ 7 end palavra reservada
+
+ Nao existem erros lexicos

@@ -1,4 +1,7 @@
 program
+var begin
+integer a ;
+end
  function subtracao(integer a,integer b):integer
     begin
     char b = 'a';

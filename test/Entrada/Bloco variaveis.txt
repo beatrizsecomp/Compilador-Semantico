@@ -1,0 +1,7 @@
+program
+var begin
+integer a ;
+real b =1,c,d;
+string a="am";
+char n = 'a';
+end

@@ -18,13 +18,14 @@ public class AnalisadorSintatico {
     private ArrayList<Variavel> variavel_local = new ArrayList<>();
     private ArrayList<Variavel> variavel_local_erros = new ArrayList<>();
 
-    private ArrayList<Variavel> constante = new ArrayList<>();
+    private ArrayList<Variavel> constantes = new ArrayList<>();
 
     private int contTokens = 0;
     private String tip;
     private int aux = 0;
     private int atterror = 0;
     private int verific = 0;
+    private int atribuicao = 0;
     private int tamanho = 0;
 
     public void analise(ArrayList<Token> tokens) {
@@ -98,14 +99,6 @@ public class AnalisadorSintatico {
         }
     }
 
-    private void terminal(String esperado) {
-        if ((!token.getLexema().equals("EOF")) && token.getLexema().equals(esperado)) { //verifica se o token atual e o que era esperado
-            token = proximo();
-        } else {
-            erroSintatico("Falta o token: " + esperado);   //gera o erro se o token nao e o esperado
-        }
-    }
-
     private Token proximo() {
         if (contTokens < tokens.size()) { //verifica se ainda possuem tokens para a analise.
             return tokens.get(contTokens++);
@@ -128,6 +121,7 @@ public class AnalisadorSintatico {
         if (token.getLexema().equals("begin")) {
             token = proximo();
             corpoVar();
+            GlobaisAll();
         } else {
             erroSintatico("Bloco de variavel nao possui begin");
             if (!(token.getLexema().equals("const") || token.getLexema().equals("function") || token.getLexema().equals("end"))) {
@@ -150,7 +144,6 @@ public class AnalisadorSintatico {
         Variavel variavel = new Variavel();
         while (!(token.getLexema().equals("end") || token.getLexema().equals("const") || token.getLexema().equals("function"))) {
             if (tipo()) {
-                variavel.setTipo(token.getLexema());
                 tip = token.getLexema();
                 token = proximo();
                 declaracaoVariaveis();
@@ -226,23 +219,30 @@ public class AnalisadorSintatico {
 
     }
 
-    // id ou id,id ou id[1] ou id =1
+    // GLOBAL id ou id,id ou id[1] ou id =1
     private void padraoVariavel() {
+        Variavel variavel = new Variavel(), teste;
         if (token.getTipo().equals("Identificador")) {
-            Variavel variavel = new Variavel();
             variavel.setTipo(tip);
             variavel.setNome(token.getLexema());
             tamanho = 0;
-            System.out.println("@variaveis globais" + variavel.getNome() + " " + variavel.getTipo());
             token = proximo();
-            opcVariaveisGlo();
+            atribuicao = 0;
+            opcVariaveisGlo(variavel);
             variavel.setTamanho(tamanho);
-            //variavel_global.add(variavel);
-
+            if(atribuicao==0){
+                teste = variavelGlobalList(variavel.getNome());
+                if(teste.getNome().equals("0")){
+                    variavel_global.add(variavel);
+                }else{
+                    erroSemantico("Variavel ja existe");
+                }
+            }
+           
         } else {
             if (token.getLexema().equals("=")) {
                 token = proximo();
-                igualdadeVarGlo();
+                igualdadeVarGlo(variavel);
             } else {
                 if (!token.getLexema().equals(";")) {
                     erroSintatico("Lexema nao esperado: " + token.getLexema());
@@ -260,22 +260,41 @@ public class AnalisadorSintatico {
         }
     }
 
-    private void opcVariaveisGlo() {
+    private void opcVariaveisGlo(Variavel variavel) {
         if (token.getLexema().equals("[")) {
-            declaracaoMatriz();
+            declaracaoMatriz(variavel);
         }
         if (token.getLexema().equals("=")) {
             token = proximo();
-            igualdadeVarGlo();
+            igualdadeVarGlo(variavel);
         }
     }
 
-    private void igualdadeVarGlo() {
+    private void igualdadeVarGlo(Variavel variavel) {
+        Variavel var = variavel;
         if (token.getLexema().equals("[")) {
             atribuicaoMatriz();
         } else if (token.getTipo().equals("char") || token.getTipo().equals("string") || token.getTipo().equals("numero") || token.getLexema().equals("false") || token.getLexema().equals("true")) {
-            token = proximo();
-        } else {
+            
+                if(token.getTipo().equals("char")){
+                if(!var.getTipo().equals("char")){
+                    atribuicao = 1;
+                    erroSemantico("Tipo incompativel");
+                }}else if(token.getTipo().equals("string")){
+                if(!var.getTipo().equals("string")){
+                    atribuicao = 1;
+                    erroSemantico("Tipo incompativel");
+                }}else if(token.getLexema().equals("true")||token.getLexema().equals("false")){
+                if(!var.getTipo().equals("boolean")){
+                    atribuicao = 1;
+                    erroSemantico("Tipo incompativel");
+                }}else if(token.getTipo().equals("numero")){
+                if(!(var.getTipo().equals("integer")||var.getTipo().equals("real"))){
+                    atribuicao = 1;
+                    erroSemantico("Tipo incompativel");
+                }}
+                token = proximo();
+            }else {
             erroSintatico("Atribuicao incorreta: " + token.getLexema());
             if (!(token.getLexema().equals(",") || token.getLexema().equals(";") || token.getLexema().equals("end"))) {
                 token = proximo();
@@ -283,11 +302,12 @@ public class AnalisadorSintatico {
         }
 
     }
+                
 
-    private void opcVariavel(Variavel local, String tipoVar) {
+  private void opcVariavel(Variavel local, String tipoVar) {
 
         if (token.getLexema().equals("[")) {
-            declaracaoMatriz();
+            declaracaoMatriz(local);
         }
         if (token.getLexema().equals("=")) {
             token = proximo();
@@ -320,7 +340,6 @@ public class AnalisadorSintatico {
         else if (token.getTipo().equals("Identificador") || token.getTipo().equals("char") || token.getTipo().equals("string") || token.getTipo().equals("numero") || token.getLexema().equals("false") || token.getLexema().equals("true") || token.getLexema().equals("(")) {
             if (tipoVar.equals("string") && token.getTipo().equals("string")) {
                 verific = 0;
-
             } else if (tipoVar.equals("char") && token.getTipo().equals("char")) {
                 verific = 0;
             } else if (tipoVar.equals("boolean") && token.getLexema().equals("true") || token.getLexema().equals("false")) {
@@ -437,10 +456,12 @@ public class AnalisadorSintatico {
     }
 
     private void padraoConst() {
+        Variavel constante = new Variavel();
         if (token.getTipo().equals("Identificador")) {
+            constante.setNome(token.getLexema());
             token = proximo();
             if (token.getLexema().equals("[")) {
-                declaracaoMatriz();
+                declaracaoMatriz(constante);
             }
             if (token.getLexema().equals("=")) {
                 token = proximo();
@@ -712,19 +733,15 @@ public class AnalisadorSintatico {
     }
 
     private void opcId() {
+         String nome;
+         Variavel variavel;
         if (token.getTipo().equals("Identificador")) {
-            //token = proximo();
-            //mdei
-            //if (variavel_local.contains())
-            //Variavel local = new Variavel();
-            // local.setTipo(token.getTipo());
-            // local.setNome(token.getLexema());
-            // System.out.println("@variaveis locaais "+local.getNome()+" "+local.getTipo());
-            // variavel_global.add(local);
+          nome = token.getLexema();
             this.atterror = 0;
             expLogica(0);
             if (token.getLexema().equals("[")) {
-                declaracaoMatriz();
+                variavel = existeVar(nome);
+                declaracaoMatriz(variavel);
                 if (token.getLexema().equals("=")) {
                     if (atterror != 0) {
                         erroSintatico("Atribuicao incorreta");
@@ -1218,7 +1235,7 @@ public class AnalisadorSintatico {
         }
     }
 
-    private void declaracaoMatriz() {
+    private void declaracaoMatriz(Variavel variavel) {
         switch (token.getLexema()) {
             case "[":
                 tamanho++;
@@ -1228,7 +1245,7 @@ public class AnalisadorSintatico {
                 } else if (!(token.getTipo().equals("numero"))) {
                     erroSintatico("declaracao de matriz incorreta, esperava numero");
                     if (token.getLexema().equals("[")) {
-                        declaracaoMatriz();
+                        declaracaoMatriz(variavel);
                     } else if (token.getLexema().equals("]") || token.getLexema().equals(",") || token.getLexema().equals("=")) {
 
                     } else if (token.getLexema().equals("Identificador")) {
@@ -1249,7 +1266,7 @@ public class AnalisadorSintatico {
                     } else if (token.getLexema().equals("=")) {
                         break;
                     } else if (token.getLexema().equals("[")) {
-                        declaracaoMatriz();
+                        declaracaoMatriz(variavel);
                     } else {
                         while (!(token.getLexema().equals(";") || token.getLexema().equals("]") || token.getLexema().equals("EOF") || token.getLexema().equals("=") || token.getLexema().equals("end"))) {
                             erroSintatico("parametro matriz incorreto: " + token.getLexema());
@@ -1262,7 +1279,7 @@ public class AnalisadorSintatico {
                 }
 
                 if (token.getLexema().equals("[")) {
-                    declaracaoMatriz();
+                    declaracaoMatriz(variavel);
                 }
                 break;
             default:
@@ -1271,6 +1288,7 @@ public class AnalisadorSintatico {
     }
 
     private void atribuicaoMatriz() {
+        int verificaTamanho=0;
         token = proximo();
         if (token.getTipo().equals("char") || token.getTipo().equals("string") || token.getTipo().equals("numero") || token.getLexema().equals("false") || token.getLexema().equals("true")) {
             token = proximo();
@@ -1480,12 +1498,25 @@ public class AnalisadorSintatico {
         }
 
     }
-
+    
     private void parametroRead() {
+        Variavel variavel = new Variavel();
+        Variavel constante = new Variavel();
+        Variavel variavelGlobal = new Variavel();
+        
         if (token.getTipo().equals("Identificador")) {
+            String nome = token.getLexema();
             token = proximo();
+            constante = constantList(nome);
+            variavel = variavelList(nome);
+            variavelGlobal = variavelGlobalList(nome);
+            if(variavel.getNome().equals("0")&&variavelGlobal.getNome().equals("0")&&constante.getNome().equals("0")){
+                erroSemantico("Variavel nao declarada");
+            }
+            
+            // procurar essa variavel na lista
             if (token.getLexema().equals("[")) {
-                declaracaoMatriz();
+                declaracaoMatriz(variavel);
             }
             if (token.getLexema().equals(",")) {
                 token = proximo();
@@ -1666,7 +1697,7 @@ public class AnalisadorSintatico {
         } else if (idAritmetico()) {
             return true;
         } else if (token.getTipo().equals("Identificador")) {
-            verifId();
+            verifId(token.getLexema());
             return true;
         } else if (token.getTipo().equals("numero")) {
             token = proximo();
@@ -1675,13 +1706,14 @@ public class AnalisadorSintatico {
             return false;
         }
     }
-
-    private void verifId() {
+    
+    private void verifId(String lexema) {
+        Variavel teste = existeVar(lexema);
         token = proximo();
         if (token.getLexema().equals("(")) {
             callFunction(1);
         } else if (token.getLexema().equals("[")) {
-            declaracaoMatriz();
+            declaracaoMatriz(teste);
         } else {
 
         }
@@ -1915,6 +1947,16 @@ public class AnalisadorSintatico {
             }
         }
     }
+    public void GlobaisAll() {
+        System.out.println("Globais");
+        for (int i = 0; i < variavel_global.size(); i++) //cars name of arraylist
+        {
+
+            System.out.println(variavel_global.get(i).getNome() + "   " + variavel_global.get(i).getTipo());
+
+        }
+        System.out.println("END LIST");
+    }
 
     public void variaveisAll() {
         System.out.println("LISTAA");
@@ -1940,4 +1982,66 @@ public class AnalisadorSintatico {
         return false;
 
     }
+      public Variavel variavelList(String nome) {
+        Variavel variavel = new Variavel();
+        variavel.setNome("0");
+        for (int i = 0; i < variavel_local.size(); i++) //cars name of arraylist
+        {
+
+            if (variavel_local.get(i).getNome().equals(nome)) {
+                variavel = variavel_local.get(i);
+                return variavel;
+            }
+        }
+        return variavel;
+
+    }
+    public Variavel variavelGlobalList(String nome) {
+        Variavel variavel = new Variavel();
+        variavel.setNome("0");
+        for (int i = 0; i < variavel_global.size(); i++) //cars name of arraylist
+        {
+
+            if (variavel_global.get(i).getNome().equals(nome)) {
+                variavel = variavel_global.get(i);
+                return variavel;
+            }
+        }
+        return variavel;
+
+    }
+  
+    public Variavel constantList(String nome) {
+        Variavel constante = new Variavel();
+        constante.setNome("0");
+        for (int i = 0; i < constantes.size(); i++) //cars name of arraylist
+        {
+
+            if (constantes.get(i).getNome().equals(nome)) {
+                constante = constantes.get(i);
+                return constante;
+            }
+        }
+        return constante;
+
+    }
+    public Variavel existeVar(String lexema){
+            Variavel constante,variavel, variavelGlobal, erro;
+            constante = constantList(lexema);
+            variavel = variavelList(lexema);
+            variavelGlobal = variavelGlobalList(lexema);
+            
+            if(!variavel.getNome().equals("0")){
+                return variavel;
+            }else if(!variavelGlobal.getNome().equals("0")){
+                return variavelGlobal;
+            }else if(constante.getNome().equals("0")){
+                return constante;
+            }else{
+                erro = new Variavel ();
+                erro.setNome("0");
+                return erro;
+            }
+        }
+
 }

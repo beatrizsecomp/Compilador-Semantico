@@ -1,0 +1,2 @@
+Erro: Linha: 5 Variavel ja existe
+
