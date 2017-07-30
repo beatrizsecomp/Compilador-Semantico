@@ -121,7 +121,7 @@ public class AnalisadorSintatico {
         if (token.getLexema().equals("begin")) {
             token = proximo();
             corpoVar();
-            GlobaisAll();
+           // GlobaisAll();
         } else {
             erroSintatico("Bloco de variavel nao possui begin");
             if (!(token.getLexema().equals("const") || token.getLexema().equals("function") || token.getLexema().equals("end"))) {
