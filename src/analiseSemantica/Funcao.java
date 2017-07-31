@@ -10,13 +10,7 @@ public class Funcao {
 	private String tipoRetorno;
 	private ArrayList<Variavel> parametros = new ArrayList<>();
         
-        public Funcao(String nome, String tipoRetorno, ArrayList<Variavel> parametros) {
-		this.nome = nome;
-		this.tipoRetorno = tipoRetorno;
-		// Isso ta certo ?
-                this.parametros= parametros;
-	}
-	/**
+        /**
 	 * @return the parametro
 	 */
 	public ArrayList<Variavel> getParametros() {

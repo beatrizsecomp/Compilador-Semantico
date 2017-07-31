@@ -10,6 +10,9 @@
  5 ( delimitador
  5 integer palavra reservada
  5 a Identificador
+ 5 [ delimitador
+ 5 1 numero
+ 5 ] delimitador
  5 , delimitador
  5 integer palavra reservada
  5 b Identificador

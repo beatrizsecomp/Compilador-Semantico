@@ -526,20 +526,23 @@ public class AnalisadorSintatico {
 
     //Estrutura de uma funcao
     private void blocoFuncao() {
+        Funcao funcao = new Funcao();
+       
         token = proximo(); // pega o proximo que deveria ser um ID
         if (token.getTipo().equals("Identificador")) {
+            funcao.setNome(token.getLexema());
             token = proximo();
-            idFuncao();
+            idFuncao(funcao);
         } else {
             erroSintatico("A funcao deve ser incializada com um nome");
             if (token.getLexema().equals("(")) {
-                idFuncao();
+                idFuncao(funcao);
             } else if (token.getLexema().equals(")")) {
                 erroSintatico("Esperava (");
-                parentesesF();
+                parentesesF(funcao);
             } else if (token.getLexema().equals("integer") || token.getLexema().equals("real") || token.getLexema().equals("char") || token.getLexema().equals("string") || token.getLexema().equals("boolean")) {
                 erroSintatico("Esperava (");
-                parentesesF();
+                parentesesF(funcao);
             } else if (token.getLexema().equals("begin")) {
                 erroSintatico("Esperava (parametros)");
                 fBegin();
@@ -562,7 +565,7 @@ public class AnalisadorSintatico {
                 if (!verifica()) {
                     //token = proximo();
                     if (!(token.getLexema().equals("EOF") || token.getLexema().equals("end"))) {
-                        idFuncao();
+                        idFuncao(funcao);
                     }
                 }
             }
@@ -570,16 +573,16 @@ public class AnalisadorSintatico {
         }
     }
 
-    private void idFuncao() {
+    private void idFuncao(Funcao funcao) {
         if (token.getLexema().equals("(")) {
             token = proximo();
-            parentesesF();
+            parentesesF(funcao);
         } else {
             erroSintatico("Faltou ( na funcao");
             if (token.getLexema().equals(")")) {
-                parentesesF();
+                parentesesF(funcao);
             } else if (token.getLexema().equals("integer") || token.getLexema().equals("real") || token.getLexema().equals("char") || token.getLexema().equals("string") || token.getLexema().equals("boolean")) {
-                parentesesF();
+                parentesesF(funcao);
             } else if (token.getLexema().equals("begin")) {
                 erroSintatico("Esperava (parametros)");
                 fBegin();
@@ -602,7 +605,7 @@ public class AnalisadorSintatico {
                 if (!verifica()) {
                     token = proximo();
                     if (!(token.getLexema().equals("EOF") || token.getLexema().equals("end"))) {
-                        idFuncao();
+                        idFuncao(funcao);
                     }
                 }
             }
@@ -610,9 +613,12 @@ public class AnalisadorSintatico {
         }
     }
 
-    private void parentesesF() {
+    private void parentesesF(Funcao funcao) {
+        ArrayList<Variavel> parametros = new ArrayList<>();
         if (!token.getLexema().equals(")")) {
-            parametroFuncao();
+           // obtem a lista de parametros da funcao
+            parametros = parametroFuncao(parametros); 
+            funcao.setParametros(parametros);
         }
         if (token.getLexema().equals(")")) {
             token = proximo();
@@ -624,14 +630,17 @@ public class AnalisadorSintatico {
             erroSintatico("Faltou ) na funcao");
         }
         if (token.getLexema().equals(":")) {
-            temRetorno();
+            funcao.setTipoRetorno(temRetorno());
+            //temRetorno();
         }
         if (!(token.getLexema().equals(":") || token.getLexema().equals("begin"))) {
             erroSintatico("Esperava begin ou retorno");
             token = proximo();
         }
         if (token.getLexema().equals("begin")) {
+            funcoes.add(funcao);
             fBegin();
+            
 
         } else {
             erroSintatico("Faltou begin na funcao");
@@ -1056,16 +1065,29 @@ public class AnalisadorSintatico {
         expLogica(1);
     }
 
-    private void parametroFuncao() {
+    private ArrayList parametroFuncao(ArrayList<Variavel> parametros) {
+        Variavel parametro = new Variavel();
+        
         if (tipoPrimitivo()) {
+        parametro.setTipo(token.getLexema());
             token = proximo();
             if (token.getTipo().equals("Identificador")) {
+                
+                parametro.setNome(token.getLexema());
+                parametros.add(parametro);
                 token = proximo();
+                if(token.getLexema().equals("[")){
+                    tamanho = 0;
+                    declaracaoMatriz(parametro);
+                    parametro.setTamanho(tamanho);
+                }
                 if (token.getLexema().equals(",")) {
                     token = proximo();
-                    parametroFuncao();
+                    parametroFuncao(parametros);
                 } else if (!token.getLexema().equals(")")) {
-                    parametroFuncao();
+                    parametroFuncao(parametros);
+                }else{
+                    return parametros;
                 }
             } else {
                 erroSintatico("Parametro de funcao incorreto");
@@ -1075,7 +1097,7 @@ public class AnalisadorSintatico {
                 token = proximo();
                 if (token.getLexema().equals(",")) {
                     token = proximo();
-                    parametroFuncao();
+                    parametroFuncao(parametros);
                 }
             } else {
                 erroSintatico("Parametro incorreto: " + token.getLexema());
@@ -1084,23 +1106,29 @@ public class AnalisadorSintatico {
                     token = proximo();
                     if (token.getLexema().equals(",")) {
                         token = proximo();
-                        parametroFuncao();
+                        parametroFuncao(parametros);
                     }
                 }
                 if (!(token.getLexema().equals(":") || token.getLexema().equals(")") || token.getLexema().equals("EOF") || token.getLexema().equals("function"))) {
-                    parametroFuncao();
+                    parametroFuncao(parametros);
                 }
                 if (token.getLexema().equals("function")) {
                     Funcao();
                 }
             }
         }
+        return parametros;
     }
 
-    private void temRetorno() {
+    private String temRetorno() {
+        String tipoRetorno = "";
         token = proximo();
         if (tipoPrimitivo()) {
+            tipoRetorno = token.getLexema();
             token = proximo();
+            return tipoRetorno;
+        }else{
+            return tipoRetorno;
         }
     }
 
