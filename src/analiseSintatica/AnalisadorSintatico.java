@@ -1052,7 +1052,7 @@ public class AnalisadorSintatico {
 
     //Opcoes de parametros if ou while
     private void parametrosIf() {
-        //expRelacional();
+       
         expLogica(1);
     }
 
