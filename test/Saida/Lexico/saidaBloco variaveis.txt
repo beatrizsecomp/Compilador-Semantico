@@ -3,15 +3,32 @@
  2 begin palavra reservada
  3 integer palavra reservada
  3 a Identificador
+ 3 [ delimitador
+ 3 2 numero
+ 3 ] delimitador
+ 3 [ delimitador
+ 3 1 numero
+ 3 ] delimitador
+ 3 [ delimitador
+ 3 3 numero
+ 3 ] delimitador
+ 3 = operador relacional
+ 3 [ delimitador
+ 3 1 numero
+ 3 , delimitador
+ 3 2 numero
+ 3 , delimitador
+ 3 3 numero
+ 3 , delimitador
+ 3 4 numero
+ 3 , delimitador
+ 3 5 numero
+ 3 ] delimitador
  3 ; delimitador
- 4 real palavra reservada
- 4 b Identificador
- 4 = operador relacional
- 4 1 numero
- 4 , delimitador
+ 4 integer palavra reservada
  4 c Identificador
- 4 , delimitador
- 4 d Identificador
+ 4 = operador relacional
+ 4 2 numero
  4 ; delimitador
  5 string palavra reservada
  5 a Identificador
@@ -24,5 +41,51 @@
  6 'a' char
  6 ; delimitador
  7 end palavra reservada
+ 9 const palavra reservada
+ 9 begin palavra reservada
+ 10 integer palavra reservada
+ 10 f Identificador
+ 10 = operador relacional
+ 10 1 numero
+ 10 ; delimitador
+ 11 end palavra reservada
+ 12 function palavra reservada
+ 12 subtracao Identificador
+ 12 ( delimitador
+ 12 ) delimitador
+ 12 begin palavra reservada
+ 13 integer palavra reservada
+ 13 i Identificador
+ 13 [ delimitador
+ 13 3 numero
+ 13 ] delimitador
+ 13 [ delimitador
+ 13 2 numero
+ 13 ] delimitador
+ 13 = operador relacional
+ 13 [ delimitador
+ 13 1 numero
+ 13 , delimitador
+ 13 2 numero
+ 13 , delimitador
+ 13 3 numero
+ 13 , delimitador
+ 13 4 numero
+ 13 , delimitador
+ 13 5 numero
+ 13 ] delimitador
+ 13 ; delimitador
+ 14 integer palavra reservada
+ 14 o Identificador
+ 14 = operador relacional
+ 14 4 numero
+ 14 ; delimitador
+ 15 integer palavra reservada
+ 15 e Identificador
+ 15 = operador relacional
+ 15 f Identificador
+ 15 ; delimitador
+ 16 end palavra reservada
+ 17 end palavra reservada
 
  Nao existem erros lexicos

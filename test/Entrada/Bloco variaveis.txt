@@ -1,7 +1,18 @@
 program
-var begin
-integer a ;
-real b =1,c,d;
-string a="am";
-char n = 'a';
+	var begin
+		integer a[2][1][3] = [1,2,3,4,5] ;
+		integer c=2;
+		string a="am";
+		char n = 'a';
+	end
+	
+	const begin
+		integer f= 1;
+	end
+
+	function subtracao()begin
+	    integer i[3][2]=[1,2,3,4,5];
+	    integer o = 4;
+		integer e =  f;
+	end
 end

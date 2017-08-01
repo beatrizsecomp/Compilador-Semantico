@@ -1,2 +1,2 @@
+Erro: Linha: 4 Atribuicao incorreta: a
 
-Nao existem erros Sintaticos

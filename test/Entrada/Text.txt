@@ -1,10 +1,18 @@
 program
 var begin
 integer a ;
+real n = a;
+integer m[2][3]=[1,2,3,4,5,6];
+string j = "aceita";
+end
+const begin 
+string f ="olaola";
+integer numero = 12;
 end
  function subtracao(integer a[1],integer b):integer
     begin
     char b = 'a';
+    
     char r,ca='a';
     string f="legal";
     integer b;
