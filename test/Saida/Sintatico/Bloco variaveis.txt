@@ -1,2 +1,2 @@
-Erro: Linha: 17 Esperava um: bloco de variavel|bloco de constates|bloco de funcao
 
+Nao existem erros Sintaticos

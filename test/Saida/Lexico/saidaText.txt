@@ -7,121 +7,126 @@
  4 real palavra reservada
  4 n Identificador
  4 = operador relacional
- 4 a Identificador
+ 4 1 numero
  4 ; delimitador
  5 integer palavra reservada
- 5 m Identificador
- 5 [ delimitador
- 5 2 numero
- 5 ] delimitador
- 5 [ delimitador
- 5 3 numero
- 5 ] delimitador
+ 5 l Identificador
  5 = operador relacional
- 5 [ delimitador
- 5 1 numero
- 5 , delimitador
- 5 2 numero
- 5 , delimitador
- 5 3 numero
- 5 , delimitador
- 5 4 numero
- 5 , delimitador
- 5 5 numero
- 5 , delimitador
- 5 6 numero
- 5 ] delimitador
+ 5 12 numero
  5 ; delimitador
- 6 string palavra reservada
- 6 j Identificador
+ 6 integer palavra reservada
+ 6 m Identificador
+ 6 [ delimitador
+ 6 2 numero
+ 6 ] delimitador
+ 6 [ delimitador
+ 6 3 numero
+ 6 ] delimitador
  6 = operador relacional
- 6 "aceita" string
+ 6 [ delimitador
+ 6 1 numero
+ 6 , delimitador
+ 6 2 numero
+ 6 , delimitador
+ 6 3 numero
+ 6 , delimitador
+ 6 4 numero
+ 6 , delimitador
+ 6 5 numero
+ 6 , delimitador
+ 6 6 numero
+ 6 ] delimitador
  6 ; delimitador
- 7 end palavra reservada
- 8 const palavra reservada
- 8 begin palavra reservada
- 9 string palavra reservada
- 9 f Identificador
- 9 = operador relacional
- 9 "olaola" string
- 9 ; delimitador
- 10 integer palavra reservada
- 10 numero Identificador
+ 7 string palavra reservada
+ 7 j Identificador
+ 7 = operador relacional
+ 7 "aceita" string
+ 7 ; delimitador
+ 8 end palavra reservada
+ 9 const palavra reservada
+ 9 begin palavra reservada
+ 10 string palavra reservada
+ 10 f Identificador
  10 = operador relacional
- 10 12 numero
+ 10 "olaola" string
  10 ; delimitador
- 11 end palavra reservada
- 12 function palavra reservada
- 12 subtracao Identificador
- 12 ( delimitador
- 12 integer palavra reservada
- 12 a Identificador
- 12 [ delimitador
- 12 1 numero
- 12 ] delimitador
- 12 , delimitador
- 12 integer palavra reservada
- 12 b Identificador
- 12 ) delimitador
- 12 : delimitador
- 12 integer palavra reservada
- 13 begin palavra reservada
- 14 char palavra reservada
- 14 b Identificador
- 14 = operador relacional
- 14 'a' char
- 14 ; delimitador
- 16 char palavra reservada
- 16 r Identificador
- 16 , delimitador
- 16 ca Identificador
- 16 = operador relacional
- 16 'a' char
- 16 ; delimitador
- 17 string palavra reservada
- 17 f Identificador
+ 11 integer palavra reservada
+ 11 numero Identificador
+ 11 = operador relacional
+ 11 12 numero
+ 11 ; delimitador
+ 12 end palavra reservada
+ 13 function palavra reservada
+ 13 subtracao Identificador
+ 13 ( delimitador
+ 13 integer palavra reservada
+ 13 a Identificador
+ 13 [ delimitador
+ 13 1 numero
+ 13 ] delimitador
+ 13 , delimitador
+ 13 integer palavra reservada
+ 13 b Identificador
+ 13 ) delimitador
+ 13 : delimitador
+ 13 integer palavra reservada
+ 14 begin palavra reservada
+ 15 char palavra reservada
+ 15 b Identificador
+ 15 = operador relacional
+ 15 'a' char
+ 15 ; delimitador
+ 17 char palavra reservada
+ 17 r Identificador
+ 17 , delimitador
+ 17 ca Identificador
  17 = operador relacional
- 17 "legal" string
+ 17 'a' char
  17 ; delimitador
- 18 integer palavra reservada
- 18 b Identificador
+ 18 string palavra reservada
+ 18 f Identificador
+ 18 = operador relacional
+ 18 "legal" string
  18 ; delimitador
- 19 char palavra reservada
- 19 o Identificador
+ 19 integer palavra reservada
+ 19 b Identificador
  19 ; delimitador
- 20 integer palavra reservada
- 20 c Identificador
- 20 = operador relacional
- 20 0 numero
+ 20 char palavra reservada
+ 20 o Identificador
  20 ; delimitador
- 21 boolean palavra reservada
- 21 vai Identificador
+ 21 integer palavra reservada
+ 21 c Identificador
  21 = operador relacional
- 21 true palavra reservada
+ 21 0 numero
  21 ; delimitador
- 22 string palavra reservada
- 22 dada Identificador
+ 22 boolean palavra reservada
+ 22 vai Identificador
  22 = operador relacional
- 22 "dada" string
+ 22 true palavra reservada
  22 ; delimitador
- 23 boolean palavra reservada
- 23 tt Identificador
+ 23 string palavra reservada
+ 23 dada Identificador
  23 = operador relacional
- 23 false palavra reservada
+ 23 "dada" string
  23 ; delimitador
- 24 if palavra reservada
- 24 ( delimitador
- 24 a Identificador
- 24 > operador relacional
- 24 b Identificador
- 24 ) delimitador
- 24 then palavra reservada
- 24 begin palavra reservada
- 25 ab Identificador
- 25 = operador relacional
- 25 3 numero
- 25 ; delimitador
- 26 end palavra reservada
- 28 end palavra reservada
+ 24 boolean palavra reservada
+ 24 tt Identificador
+ 24 = operador relacional
+ 24 false palavra reservada
+ 24 ; delimitador
+ 25 if palavra reservada
+ 25 ( delimitador
+ 25 a Identificador
+ 25 > operador relacional
+ 25 b Identificador
+ 25 ) delimitador
+ 25 then palavra reservada
+ 25 begin palavra reservada
+ 26 ab Identificador
+ 26 = operador relacional
+ 26 3 numero
+ 26 ; delimitador
+ 27 end palavra reservada
+ 29 end palavra reservada
 
  Nao existem erros lexicos

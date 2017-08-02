@@ -4,5 +4,3 @@ Erro: Linha: 5 Variavel ja existe
 
 Erro: Linha: 13 Atribuição em matriz de tamanho incorreto
 
-Erro: Linha: 15 Atribuição com variavel de tipo incompativel
-
