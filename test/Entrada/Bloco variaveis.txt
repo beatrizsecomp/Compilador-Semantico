@@ -7,12 +7,12 @@ program
 	end
 	
 	const begin
-		integer f= 1;
+		integer c= 1;
 	end
 
 	function subtracao()begin
 	    integer i[3][2]=[1,2,3,4,5];
-	    integer o = 4;
-		integer e =  f;
+		integer e =  1;
+		integer y = e + "ola";
 	end
 

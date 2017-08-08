@@ -44,7 +44,7 @@
  9 const palavra reservada
  9 begin palavra reservada
  10 integer palavra reservada
- 10 f Identificador
+ 10 c Identificador
  10 = operador relacional
  10 1 numero
  10 ; delimitador
@@ -76,14 +76,16 @@
  13 ] delimitador
  13 ; delimitador
  14 integer palavra reservada
- 14 o Identificador
+ 14 e Identificador
  14 = operador relacional
- 14 4 numero
+ 14 1 numero
  14 ; delimitador
  15 integer palavra reservada
- 15 e Identificador
+ 15 y Identificador
  15 = operador relacional
- 15 f Identificador
+ 15 e Identificador
+ 15 + operador aritmetico
+ 15 "ola" string
  15 ; delimitador
  16 end palavra reservada
 

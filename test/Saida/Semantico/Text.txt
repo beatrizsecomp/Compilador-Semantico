@@ -1,2 +1,4 @@
+Erro: Linha: 25 expressão entre tipos incompativeis 
 
-Nao existem erros Sintaticos
+Erro: Linha: 26 Erro de expressão, id  ou função não existe
+

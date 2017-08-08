@@ -2,5 +2,9 @@ Erro: Linha: 3 Atribuição em matriz de tamanho incorreto
 
 Erro: Linha: 5 Variavel ja existe
 
+Erro: Linha: 10 Variavel já existe no escopo global
+
 Erro: Linha: 13 Atribuição em matriz de tamanho incorreto
+
+Erro: Linha: 15 Atribuição com variavel de tipo incompativel
 

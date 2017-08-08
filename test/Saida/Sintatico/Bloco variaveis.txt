@@ -1,2 +1,4 @@
+Erro: Linha: 15 Atribuicao incorreta: +
 
-Nao existem erros Sintaticos
+Erro: Linha: 15 Atribuicao incorreta: "ola"
+
