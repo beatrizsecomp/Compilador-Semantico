@@ -25,68 +25,184 @@
  3 5 numero
  3 ] delimitador
  3 ; delimitador
- 4 integer palavra reservada
- 4 c Identificador
+ 4 real palavra reservada
+ 4 n Identificador
+ 4 [ delimitador
+ 4 3 numero
+ 4 ] delimitador
  4 = operador relacional
+ 4 [ delimitador
+ 4 1 numero
+ 4 , delimitador
+ 4 1 numero
+ 4 , delimitador
  4 2 numero
+ 4 ] delimitador
  4 ; delimitador
- 5 string palavra reservada
- 5 a Identificador
+ 5 integer palavra reservada
+ 5 mok Identificador
+ 5 [ delimitador
+ 5 3 numero
+ 5 ] delimitador
  5 = operador relacional
- 5 "am" string
+ 5 [ delimitador
+ 5 1.2 numero
+ 5 , delimitador
+ 5 "a" string
+ 5 , delimitador
+ 5 'm' char
+ 5 ] delimitador
  5 ; delimitador
- 6 char palavra reservada
- 6 n Identificador
+ 6 integer palavra reservada
+ 6 c Identificador
  6 = operador relacional
- 6 'a' char
+ 6 2.1 numero
  6 ; delimitador
- 7 end palavra reservada
- 9 const palavra reservada
- 9 begin palavra reservada
- 10 integer palavra reservada
- 10 c Identificador
+ 7 real palavra reservada
+ 7 nm Identificador
+ 7 ; delimitador
+ 8 real palavra reservada
+ 8 T Identificador
+ 8 [ delimitador
+ 8 2 numero
+ 8 ] delimitador
+ 8 [ delimitador
+ 8 3 numero
+ 8 ] delimitador
+ 8 = operador relacional
+ 8 [ delimitador
+ 8 1 numero
+ 8 , delimitador
+ 8 1 numero
+ 8 , delimitador
+ 8 1 numero
+ 8 , delimitador
+ 8 1 numero
+ 8 , delimitador
+ 8 1 numero
+ 8 , delimitador
+ 8 1 numero
+ 8 ] delimitador
+ 8 ; delimitador
+ 9 boolean palavra reservada
+ 9 lol Identificador
+ 9 = operador relacional
+ 9 true palavra reservada
+ 9 ; delimitador
+ 10 boolean palavra reservada
+ 10 tst Identificador
  10 = operador relacional
- 10 1 numero
+ 10 false palavra reservada
  10 ; delimitador
- 11 end palavra reservada
- 12 function palavra reservada
- 12 subtracao Identificador
- 12 ( delimitador
- 12 ) delimitador
- 12 begin palavra reservada
- 13 integer palavra reservada
- 13 i Identificador
- 13 [ delimitador
- 13 3 numero
- 13 ] delimitador
- 13 [ delimitador
- 13 2 numero
- 13 ] delimitador
- 13 = operador relacional
- 13 [ delimitador
- 13 1 numero
- 13 , delimitador
- 13 2 numero
- 13 , delimitador
- 13 3 numero
- 13 , delimitador
- 13 4 numero
- 13 , delimitador
- 13 5 numero
- 13 ] delimitador
- 13 ; delimitador
- 14 integer palavra reservada
- 14 e Identificador
- 14 = operador relacional
- 14 1 numero
- 14 ; delimitador
+ 11 string palavra reservada
+ 11 a Identificador
+ 11 = operador relacional
+ 11 "am" string
+ 11 ; delimitador
+ 12 char palavra reservada
+ 12 n Identificador
+ 12 = operador relacional
+ 12 'a' char
+ 12 ; delimitador
+ 13 end palavra reservada
+ 14 const palavra reservada
+ 14 begin palavra reservada
  15 integer palavra reservada
- 15 y Identificador
+ 15 c Identificador
  15 = operador relacional
- 15 e Identificador
- 15 + operador aritmetico
- 15 "ola" string
+ 15 1.4 numero
+ 15 , delimitador
+ 15 a Identificador
+ 15 = operador relacional
+ 15 1 numero
  15 ; delimitador
- 16 end palavra reservada
+ 16 real palavra reservada
+ 16 num Identificador
+ 16 = operador relacional
+ 16 1.2 numero
+ 16 ; delimitador
+ 17 integer palavra reservada
+ 17 m Identificador
+ 17 [ delimitador
+ 17 2 numero
+ 17 ] delimitador
+ 17 [ delimitador
+ 17 2 numero
+ 17 ] delimitador
+ 17 = operador relacional
+ 17 [ delimitador
+ 17 1 numero
+ 17 , delimitador
+ 17 2 numero
+ 17 , delimitador
+ 17 3 numero
+ 17 , delimitador
+ 17 4 numero
+ 17 ] delimitador
+ 17 ; delimitador
+ 18 real palavra reservada
+ 18 f Identificador
+ 18 = operador relacional
+ 18 4 numero
+ 18 ; delimitador
+ 19 end palavra reservada
+ 20 function palavra reservada
+ 20 subtracao Identificador
+ 20 ( delimitador
+ 20 integer palavra reservada
+ 20 a Identificador
+ 20 , delimitador
+ 20 real palavra reservada
+ 20 b Identificador
+ 20 , delimitador
+ 20 char palavra reservada
+ 20 b Identificador
+ 20 ) delimitador
+ 20 begin palavra reservada
+ 21 integer palavra reservada
+ 21 i Identificador
+ 21 [ delimitador
+ 21 3 numero
+ 21 ] delimitador
+ 21 [ delimitador
+ 21 2 numero
+ 21 ] delimitador
+ 21 = operador relacional
+ 21 [ delimitador
+ 21 1 numero
+ 21 , delimitador
+ 21 2 numero
+ 21 , delimitador
+ 21 3 numero
+ 21 , delimitador
+ 21 4 numero
+ 21 , delimitador
+ 21 5 numero
+ 21 ] delimitador
+ 21 ; delimitador
+ 22 integer palavra reservada
+ 22 e Identificador
+ 22 = operador relacional
+ 22 1 numero
+ 22 ; delimitador
+ 23 integer palavra reservada
+ 23 y Identificador
+ 23 , delimitador
+ 23 l Identificador
+ 23 , delimitador
+ 23 k Identificador
+ 23 , delimitador
+ 23 g Identificador
+ 23 ; delimitador
+ 24 string palavra reservada
+ 24 n Identificador
+ 24 ; delimitador
+ 25 y Identificador
+ 25 = operador relacional
+ 25 y Identificador
+ 25 + operador aritmetico
+ 25 k Identificador
+ 25 ; delimitador
+ 26 end palavra reservada
 
  Nao existem erros lexicos

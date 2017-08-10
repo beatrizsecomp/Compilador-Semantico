@@ -1,0 +1,6 @@
+Erro: Linha: 19 Id ou função não existe
+
+Erro: Linha: 20 Atribuição em matriz de tamanho incorreto
+
+Erro: Linha: 24 expressão entre tipos incompativeis 
+

@@ -10,10 +10,9 @@ const begin
 string f ="olaola";
 integer numero = 12;
 end
- function subtracao(integer a[1],integer b):integer
+ function subtracao(integer a[1],integer b, real a):integer
     begin
     char b = 'a';
-    
     char r,ca='a';
     string f="legal";
     integer b;
@@ -25,9 +24,8 @@ end
     if(a>b)then begin
 		ab=3;
    	end
-        
-
     end
-    
-    
+function teste (integer a, real b) begin
+integer teste = a;    
+    end
 
