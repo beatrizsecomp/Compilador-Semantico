@@ -1,0 +1,36 @@
+program
+	var begin
+		integer a[2][1] = [1,2] ;
+                real n[3]=[1,1,2];
+                boolean lol = "a";
+                boolean tst = false;
+		string hu="am";
+		char oi = 'a';
+	end
+	const begin
+		integer c= 1, k=1;
+                real num = 1.2;
+                integer m[2][2] = [1,2,3,4] ;
+                real f = 4;
+                string lp ="oi";
+                char letra = 'a';
+                boolean testt = true;
+	end
+	function constates(integer null, real b, char u):string begin
+        null = c ;
+        oi = u;
+        null = c+1*2.0;
+        b = 2*b;
+        c = null;
+        m[2][1]=[1,2];
+        null = 1;
+        string n = "testando";
+        lp = n;
+        lp = "testando";
+        letra = 'b';
+        boolean g = true;
+        g = false;
+        testt = false;
+
+	end
+

@@ -1,0 +1,14 @@
+Erro: Linha: 5 Atribuicao de tipo incompativel
+
+Erro: Linha: 24 Constantes nao podem ser atribuidas
+
+Erro: Linha: 25 Constantes nao podem ser atribuidas
+
+Erro: Linha: 28 Constantes nao podem ser atribuidas
+
+Erro: Linha: 29 Constantes nao podem ser atribuidas
+
+Erro: Linha: 30 Constantes nao podem ser atribuidas
+
+Erro: Linha: 33 Constantes nao podem ser atribuidas
+

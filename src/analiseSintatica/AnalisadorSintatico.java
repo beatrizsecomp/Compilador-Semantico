@@ -17,7 +17,7 @@ public class AnalisadorSintatico {
     private ArrayList<Variavel> variavel_global = new ArrayList<>();
     private ArrayList<Variavel> variavel_local = new ArrayList<>();
     private ArrayList<Variavel> variavel_local_erros = new ArrayList<>();
-
+    private ArrayList<Variavel> parametrosCF = new ArrayList<>();
     private ArrayList<Variavel> constantes = new ArrayList<>();
 
     private int contTokens = 0;
@@ -234,13 +234,12 @@ public class AnalisadorSintatico {
             atribuicao = 0;
             opcVariaveisGlo(variavel);
             variavel.setTamanho(tamanho);
-            if (atribuicao == 0) {
-                teste = variavelGlobalList(variavel.getNome());
-                if (teste.getNome().equals("0")) {
-                    variavel_global.add(variavel);
-                } else {
-                    erroSemantico("Variavel ja existe");
-                }
+
+            teste = variavelGlobalList(variavel.getNome());
+            if (teste.getNome().equals("0")) {
+                variavel_global.add(variavel);
+            } else {
+                erroSemantico("Variavel ja existe");
             }
 
         } else {
@@ -283,25 +282,25 @@ public class AnalisadorSintatico {
             if (token.getTipo().equals("char")) {
                 if (!var.getTipo().equals("char")) {
                     atribuicao = 1;
-                    erroSemantico("Tipo incompativel");
+                    erroSemantico("Atribuicao de tipo incompativel");
                 }
             } else if (token.getTipo().equals("string")) {
                 if (!var.getTipo().equals("string")) {
                     atribuicao = 1;
-                    erroSemantico("Tipo incompativel");
+                    erroSemantico("Atribuicao de tipo incompativel");
                 }
             } else if (token.getLexema().equals("true") || token.getLexema().equals("false")) {
                 if (!var.getTipo().equals("boolean")) {
                     atribuicao = 1;
-                    erroSemantico("Tipo incompativel");
+                    erroSemantico("Atribuicao de tipo incompativel");
                 }
             } else if (token.getTipo().equals("numero")) {
                 if (token.getLexema().indexOf('.') != -1 && var.getTipo().equals("integer")) {
                     atribuicao = 1;
-                    erroSemantico("Tipo incompativel");
+                    erroSemantico("Atribuicao de tipo incompativel");
                 } else if (!(var.getTipo().equals("integer") || var.getTipo().equals("real"))) {
                     atribuicao = 1;
-                    erroSemantico("Tipo incompativel");
+                    erroSemantico("Atribuicao de tipo incompativel");
                 }
             }
             token = proximo();
@@ -322,18 +321,17 @@ public class AnalisadorSintatico {
         if (token.getLexema().equals("=")) {
             token = proximo();
 
-            System.out.println("entrou aqui" + token.getLexema());
+            //  System.out.println("entrou aqui" + token.getLexema());
             igualdade(local, tipoVar);
         }
-        if (verific == 0) {
-            if (!variavel_local.contains(local)) {
-                local.setTipo(tipoVar);
-                variavel_local.add(local);
-                //ConstaAll();
-            } else {
-                erroSemantico("A variavel já existe ");
-            }
 
+        Variavel var = variavelList(local.getNome());
+        if (var.getNome().equals("0")) {
+            local.setTipo(tipoVar);
+            variavel_local.add(local);
+            //ConstaAll();
+        } else {
+            erroSemantico("A variavel já existe no escopo local ");
         }
 
         if (token.getLexema().equals(",")) {
@@ -344,25 +342,25 @@ public class AnalisadorSintatico {
     }
 
     private void igualdade(Variavel local, String tipoVar) {
-        verific = 0;
+        //verific = 0;
+        tipo_inco = null;
         if (token.getLexema().equals("[")) {
             atribuicaoMatriz(local);
         } //Se for uma atribuicao normal);
         else if (token.getTipo().equals("Identificador") || token.getTipo().equals("char") || token.getTipo().equals("string") || token.getTipo().equals("numero") || token.getLexema().equals("false") || token.getLexema().equals("true") || token.getLexema().equals("(")) {
             if (tipoVar.equals("string") && token.getTipo().equals("string")) {
-                verific = 0;
+                // verific = 0;
             } else if (tipoVar.equals("char") && token.getTipo().equals("char")) {
-                verific = 0;
+                // verific = 0;
             } else if (tipoVar.equals("boolean") && token.getLexema().equals("true") || token.getLexema().equals("false")) {
-                verific = 0;
+                // verific = 0;
 
             } else if (token.getTipo().equals("Identificador")) {
                 if (!variavelList(token.getLexema()).getNome().equals("0")) {
                     Variavel v = variavelList(token.getLexema());
                     if (tipoVar.equals(v.getTipo())) {
                         //System.out.println("tipo ccerto");
-                    }
-                    if (v.getNome().equals("0")) {
+                    } else if (v.getNome().equals("0")) {
                         //System.out.println("Variavel atribuida não existe");
                         erroSemantico("Variavel atribuida não existe");
                     } else {
@@ -375,8 +373,7 @@ public class AnalisadorSintatico {
                     //System.out.println(v.getTipo() + tipoVar + "tipo e tipo");
                     if (tipoVar.equals(v.getTipo())) {
                         // System.out.println("tipo ccerto");
-                    }
-                    if (v.getNome().equals("0")) {
+                    } else if (v.getNome().equals("0")) {
                         erroSemantico("Variavel atribuida não existe");
                     } else {
                         erroSemantico("Atribuição com variavel de tipo incompativel");
@@ -386,8 +383,7 @@ public class AnalisadorSintatico {
                     Variavel v = variavelGlobalList(token.getLexema());
                     if (tipoVar.equals(v.getTipo())) {
                         //System.out.println("tipo ccerto");
-                    }
-                    if (v.getNome().equals("0")) {
+                    } else if (v.getNome().equals("0")) {
                         // System.out.println("Variavel atribuida não existe");
                         erroSemantico("Variavel atribuida não existe");
                     } else {
@@ -398,15 +394,16 @@ public class AnalisadorSintatico {
 
             } else if (!(token.getTipo().equals("numero") || token.getLexema().equals("("))) {
 
-                verific = 1;
+                //verific = 1;
             }
             if (token.getTipo().equals("numero") || token.getLexema().equals("(")) {
                 if (tipoVar.equals("integer") && token.getTipo().equals("numero")) {
-                    verific = 0;
+                    // verific = 0;
                 } else {
                     erroSemantico("atribuição de tipo inteiro incompativel ");
-                    verific = 1;
+                    //verific = 1;
                 }
+                tipo_inco = null;
                 expLogica(0);
             } else {
                 token = proximo();
@@ -546,10 +543,10 @@ public class AnalisadorSintatico {
                     } else if (token.getTipo().equals("numero")) {
                         if (token.getLexema().indexOf('.') != -1 && constante.getTipo().equals("integer")) {
                             atribuicao = 1;
-                            erroSemantico("Tipo incompativel");
+                            erroSemantico("Atribuicao de tipo incompativel");
                         } else if (!(constante.getTipo().equals("integer") || constante.getTipo().equals("real"))) {
                             atribuicao = 1;
-                            erroSemantico("Tipo incompativel");
+                            erroSemantico("Atribuicao de tipo incompativel");
                         }
                     }
 
@@ -730,9 +727,14 @@ public class AnalisadorSintatico {
             token = proximo();
         }
         if (token.getLexema().equals("begin")) {
+            // precisa verificar se a funcao existe 
+            int a = existeFuncao(funcao);
+            if(a == 1){
+                erroSemantico("Funcao já existe");
+            }else{
             funcoes.add(funcao);
+            }
             f = funcao;
-            System.out.println("Dados funcao nome:" + f.getNome() + "Tipo Retorno" + f.getTipoRetorno());
             fBegin();
 
         } else {
@@ -775,6 +777,7 @@ public class AnalisadorSintatico {
             token = proximo();
             nvariaveisL(tipoVar);
         } else if (token.getTipo().equals("numero")) {
+            tipo_inco = null;
             exp2();
         } else if (token.getLexema().equals("true") || token.getLexema().equals("false")) {
             token = proximo();
@@ -795,6 +798,7 @@ public class AnalisadorSintatico {
             erroSintatico("Esperava componente do bloco, token: " + token.getLexema());
             token = proximo();
         }
+        //variaveisAll();
     }
 
     private void exp2() {
@@ -837,22 +841,38 @@ public class AnalisadorSintatico {
 
     private void opcId() {
         String nome;
-        Variavel variavel = null;
+        int con = 0;
         if (token.getTipo().equals("Identificador")) {
             nome = token.getLexema();
+            Variavel variavel = existeVar(nome);
+            if (!constantList(nome).getNome().equals("0") && variavelList(nome).getNome().equals("0")) {
+                con = 1;
+            }
             this.atterror = 0;
+            tipo_inco = null;
             expLogica(0);
             if (token.getLexema().equals("[")) {
                 variavel = existeVar(nome);
                 declaracaoMatriz(variavel);
                 if (token.getLexema().equals("=")) {
+                    if (con == 1) {
+                        erroSemantico("Constantes nao podem ser atribuidas");
+                    }
+                    this.verific = 0;
+                    variavel = existeVar(nome);
                     if (atterror != 0) {
                         erroSintatico("Atribuicao incorreta");
                     }
                     token = proximo();
                     if (atId(variavel)) {
+
+                        if ((tipo_inco != null && variavel.getTipo() != null)) {
+                            if (!variavel.getTipo().equals(tipo_inco)) {
+                                erroSemantico("Atribuicao incorreta");
+                            }
+                        }
                     } else {
-                        erroSintatico("Atribuicao incorreta");
+                        erroSintatico("Tipos incompativeis 1");
                     }
                     if (!(pontoVirgula())) {
                         erroSintatico("Faltou ; na atribuicao");
@@ -860,6 +880,7 @@ public class AnalisadorSintatico {
                 }
             }
             if (token.getLexema().equals("(")) {
+                System.out.println("Entra aqui ?");
                 callFunction(0);
             } else if (token.getLexema().equals("->")) {
                 if (!f.getNome().equals(nome)) {
@@ -870,11 +891,31 @@ public class AnalisadorSintatico {
             } else if (token.getLexema().equals(";")) {
                 token = proximo();
             } else if (token.getLexema().equals("=")) {
+                if (con == 1) {
+                    erroSemantico("Constantes nao podem ser atribuidas");
+                }
+
                 if (atterror != 0) {
                     erroSemantico("Atribuicao incorreta");
                 }
+
                 token = proximo();
                 if (atId(variavel)) {
+
+                    if ((tipo_inco != null && variavel.getTipo() != null)) {
+
+                        if (!variavel.getTipo().equals(tipo_inco)) {
+                            if (variavel.getTipo().equals("boolean") && (tipo_inco.equals("true") || tipo_inco.equals("false"))) {
+
+                            } else if ((variavel.getTipo().equals("integer") || variavel.getTipo().equals("real")) && tipo_inco.equals("numero")) {
+
+                            } else {
+                                erroSemantico("Tipos incompativeis");
+
+                            }
+
+                        }
+                    }
                 } else {
                     erroSintatico("Atribuicao incorreta");
                 }
@@ -894,15 +935,23 @@ public class AnalisadorSintatico {
             return true;
         }
         if (token.getTipo().equals("char") && variavel.getTipo().equals("char") || token.getTipo().equals("string") && variavel.getTipo().equals("string") || token.getLexema().equals("false") && variavel.getTipo().equals("boolean") || token.getLexema().equals("true") && variavel.getTipo().equals("boolean")) {
-            token = proximo();
 
+            if (token.getLexema().equals("true") || token.getLexema().equals("false")) {
+                tipo_inco = token.getLexema();
+            } else {
+                tipo_inco = token.getTipo();
+            }
+            token = proximo();
             return true;
         } else if (token.getTipo().equals("char") || token.getTipo().equals("string") || token.getLexema().equals("false") || token.getLexema().equals("true")) {
             erroSemantico("Atribuicao imcompativel");
             token = proximo();
             return true;
         } else if (token.getLexema().equals("-") || token.getLexema().equals("!") || token.getTipo().equals("Identificador") || token.getTipo().equals("numero") || token.getLexema().equals("(")) {
+            tipo_inco = null;
+
             expLogica(0);
+            //System.out.println("Tipo da expressao: " + tipo_inco);
             return true;
         } else {
             return false;
@@ -914,6 +963,7 @@ public class AnalisadorSintatico {
         idLogic();
         if ((token.getLexema().equals("||") || token.getLexema().equals("&&")) && aux == 0) {
             token = proximo();
+            this.verific++;
             if (!idLogic()) {
                 erroSintatico("Esperava uma expressao relacional ");
             }
@@ -923,6 +973,7 @@ public class AnalisadorSintatico {
     private boolean idLogic() {
         if (exp()) {
             if (operadorRelacional()) {
+                this.verific++;
                 if (exp()) {
                     return true;
                 } else {
@@ -1163,7 +1214,7 @@ public class AnalisadorSintatico {
 
     //Opcoes de parametros if ou while
     private void parametrosIf() {
-
+        tipo_inco = null;
         expLogica(1);
     }
 
@@ -1291,7 +1342,6 @@ public class AnalisadorSintatico {
             if (token.getTipo().equals("Identificador") || token.getTipo().equals("numero")) {
                 if (token.getTipo().equals("Identificador")) {
                     Variavel var = existeVar(token.getLexema());
-                    System.out.println("Nome" + token.getLexema() + " Achei " + var.getNome());
                     if (var.getNome().equals("0")) {
                         erroSemantico("Variavel nao existe");
                     } else if (!var.getTipo().equals(f.getTipoRetorno())) {
@@ -1299,7 +1349,7 @@ public class AnalisadorSintatico {
                     }
 
                 }
-                //tipo_inco = null;
+                tipo_inco = null;
                 exp();
             } else {
                 if (!token.getTipo().equals(f.getTipoRetorno())) {
@@ -1745,12 +1795,22 @@ public class AnalisadorSintatico {
     }
 
     private void parameterCallFunction() {
+        Variavel var = new Variavel();
         if (token.getTipo().equals("string") || token.getTipo().equals("char") || token.getLexema().equals("true") || token.getLexema().equals("false") || token.getTipo().equals("Identificador") || token.getTipo().equals("numero")) {
+            if(token.getLexema().equals("true")||(token.getLexema().equals("false"))){
+                var.setTipo("boolean");
+            }else if(token.getTipo().equals("char")||token.getTipo().equals("string")){
+                var.setTipo(token.getTipo());
+            }
+           
             if (token.getTipo().equals("Identificador") || token.getTipo().equals("numero")) {
+                tipo_inco = null;
                 exp();
+                var.setTipo(tipo_inco);
             } else {
                 token = proximo();
             }
+            parametrosCF.add(var);
             if (token.getLexema().equals(",")) {
                 token = proximo();
                 parameterCallFunction();
@@ -1771,7 +1831,7 @@ public class AnalisadorSintatico {
         if (token.getLexema().equals("(")) {
             token = proximo();
             if (!token.getLexema().equals(")")) {
-
+                parametrosCF.clear();
                 parameterCallFunction();
             }
         }
@@ -1874,6 +1934,7 @@ public class AnalisadorSintatico {
     private boolean termo() {
         if (token.getLexema().equals("*") || token.getLexema().equals("/") || token.getLexema().equals("%")) {
             this.atterror++;
+            this.verific++;
             return true;
         }
         return false;
@@ -1896,6 +1957,7 @@ public class AnalisadorSintatico {
             verifId(token.getLexema());
             return true;
         } else if (token.getTipo().equals("numero")) {
+            tipo_inco = token.getTipo();
             token = proximo();
             return true;
         } else {
@@ -1904,26 +1966,39 @@ public class AnalisadorSintatico {
     }
 
     private void verifId(String lexema) {
+        //System.out.println(" Lexema recebido na expressao " + lexema);
+        String nome = lexema;
         Variavel variavel = existeVar(lexema);
-        Funcao f = funcaotList(lexema);
-
-        if (variavel.getNome().equals("0") && f.getNome().equals("0")) {
+        Funcao fn = funcaotList(lexema);
+        //System.out.println("Pegou var " + variavel.getNome() + " tipo da variavel " + variavel.getTipo());
+        if (variavel.getNome().equals("0") && fn.getNome().equals("0")) {
             erroSemantico("Id ou função não existe");
         }
         if (tipo_inco == null) {
             tipo_inco = variavel.getTipo();
         } else if (tipo_inco != null && tipo_inco != "erro") {
-            if (!tipo_inco.equals(variavel.getTipo())) {
+            if (!tipo_inco.equals(variavel.getTipo()) && !variavel.getNome().equals("0")) {
+                if (tipo_inco.equals("numero") && (variavel.getTipo().equals("inteiro") || variavel.getTipo().equals("real"))) {
 
-                erroSemantico("expressão entre tipos incompativeis ");
-                tipo_inco = "erro";
+                } else {
+                    erroSemantico("expressão entre tipos incompativeis");
+                    tipo_inco = "erro";
+                }
 
             }
 
         }
         token = proximo();
+        if (!token.getLexema().equals("->")) {
+
+        }
         if (token.getLexema().equals("(")) {
+            int teste;
             callFunction(1);
+            teste = existeFuncao2(nome, parametrosCF);
+            if(teste == 0){
+                erroSemantico("Assinatura de funcao incorreta");
+            }
         } else if (token.getLexema().equals("[")) {
             declaracaoMatriz(variavel);
         } else {
@@ -1935,6 +2010,8 @@ public class AnalisadorSintatico {
         if (token.getLexema().equals("-")) {
             token = proximo();
             if (token.getTipo().equals("Identificador") || token.getTipo().equals("numero")) {
+                //verificar se o id existe
+
                 token = proximo();
                 return true;
             } else {
@@ -1976,12 +2053,15 @@ public class AnalisadorSintatico {
             if (token.getLexema().equals("*") || token.getLexema().equals("/") || token.getLexema().equals("%") || token.getLexema().equals("-") || token.getLexema().equals("+")) {
                 token = proximo();
                 this.atterror++;
+                this.verific++;
                 exp();
             }
             //
             if (operadorRelacional()) {
                 this.atterror++;
+                this.verific++;
                 if (exp()) {
+                    //tipo_inco="boolean";
                     return true;
                 } else {
                     erroSintatico("Esperava uma expressao");
@@ -1991,11 +2071,14 @@ public class AnalisadorSintatico {
                 token = proximo();
                 if (token.getLexema().equals("true")) {
                     token = proximo();
+                    tipo_inco="boolean";
                     return true;
                 } else if (token.getLexema().equals("false")) {
                     token = proximo();
+                    tipo_inco="boolean";
                     return true;
                 } else if (exp()) {
+                    tipo_inco="boolean";
                     return true;
                 } else {
                     erroSintatico("Esperava expressao");
@@ -2006,6 +2089,7 @@ public class AnalisadorSintatico {
                     erroSintatico("Esperava um operador relacional");
                     if (token.getLexema().equals("||") || token.getLexema().equals("&&")) {
                         token = proximo();
+                        verific++;
                         auxExpLogica(1);
                         return false;
                     } else if (opc == 0) {
@@ -2045,6 +2129,7 @@ public class AnalisadorSintatico {
             return true;
         } else if (token.getLexema().equals("||")) {
             token = proximo();
+            this.verific++;
             this.atterror++;
             return true;
         } else {
@@ -2060,6 +2145,7 @@ public class AnalisadorSintatico {
             }
             if (token.getLexema().equals("&&") || token.getLexema().equals("||")) {
                 this.atterror++;
+                this.verific++;
                 token = proximo();
                 if (expRelacional(1)) {
                     auxLog();
@@ -2109,6 +2195,7 @@ public class AnalisadorSintatico {
         } else if (expRelacional(opc)) {
             if (token.getLexema().equals("&&") || token.getLexema().equals("||")) {
                 token = proximo();
+                this.verific++;
                 if (expRelacional(1)) {
                     auxLog();
                     return true;
@@ -2138,6 +2225,7 @@ public class AnalisadorSintatico {
     private void auxLog() {
         if (token.getLexema().equals("&&") || token.getLexema().equals("||")) {
             token = proximo();
+            this.verific++;
             if (expLogica(1)) {
 
             } else {
@@ -2253,12 +2341,71 @@ public class AnalisadorSintatico {
 
     }
 
+    public int existeFuncao2(String lexema, ArrayList<Variavel> param){
+        int assinatura=0;
+        int tamanho;
+        ArrayList<Variavel> parametrosChamada = new ArrayList();
+        ArrayList<Variavel> parametrosF = new ArrayList();
+        for(int i = 0; i < funcoes.size(); i++){
+              if (funcoes.get(i).getNome().equals(lexema)) {
+                    parametrosF = funcoes.get(i).getParametros();
+                    parametrosChamada = param;
+                    if (parametrosF.size() == parametrosChamada.size()) {
+                        tamanho = param.size();
+                        for (int j = 0; j < param.size(); j++) {    
+                            if (parametrosF.get(i).getTipo().equals(parametrosChamada.get(i).getTipo())) {
+                                tamanho--;
+                            }else if(parametrosF.get(i).getTipo().equals("integer")||parametrosF.get(i).getTipo().equals("real")){
+                                if(parametrosChamada.get(i).getTipo().equals("numero")){
+                                    tamanho --;
+                                }
+                            }
+                        if(tamanho == 0){
+                            assinatura = 1;
+                        }
+                    }
+                }
+                //funcao = funcoes.get(i);
+                //return existe;
+            }   
+        }
+        return assinatura;
+    }
+    public int existeFuncao(Funcao n) {
+        Funcao funcao = n;
+        int existe = 0;
+        int parametrosn;
+        ArrayList<Variavel> param = new ArrayList(), param2 = new ArrayList();
+        for (int i = 0; i < funcoes.size(); i++) {
+            if (funcoes.get(i).getNome().equals(funcao.getNome())) {
+                if (funcoes.get(i).getTipoRetorno().equals(funcao.getTipoRetorno())) {
+                    param = funcoes.get(i).getParametros();
+                    param2 = funcao.getParametros();
+                    if (param.size() == param2.size()) {
+                        parametrosn = param.size();
+                        for (int j = 0; j < param.size(); j++) {    
+                            if (param.get(i).getTipo().equals(param2.get(i).getTipo())) {
+                                parametrosn--;
+                            }
+                        }
+                        if(parametrosn == 0){
+                            existe = 1;
+                        }
+                    }
+                }
+                //funcao = funcoes.get(i);
+                //return existe;
+            }
+        }
+        return existe;
+
+    }
+
     public Funcao funcaotList(String nome) {
         Funcao funcao = new Funcao();
         funcao.setNome("0");
         for (int i = 0; i < funcoes.size(); i++) //cars name of arraylist
         {
-
             if (funcoes.get(i).getNome().equals(nome)) {
                 funcao = funcoes.get(i);
                 return funcao;
@@ -2274,7 +2421,6 @@ public class AnalisadorSintatico {
         constante = constantList(lexema);
         variavel = variavelList(lexema);
         variavelGlobal = variavelGlobalList(lexema);
-        System.out.println("Constanteeee:" + constante.getNome());
         if (!variavel.getNome().equals("0")) {
             return variavel;
         } else if (!variavelGlobal.getNome().equals("0")) {

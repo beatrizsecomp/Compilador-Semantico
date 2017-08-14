@@ -1,6 +1,14 @@
-Erro: Linha: 19 Id ou função não existe
+Erro: Linha: 5 Atribuicao de tipo incompativel
 
-Erro: Linha: 20 Atribuição em matriz de tamanho incorreto
+Erro: Linha: 26 Atribuicao imcompativel
 
-Erro: Linha: 24 expressão entre tipos incompativeis 
+Erro: Linha: 28 Id ou função não existe
+
+Erro: Linha: 30 Tipos incompativeis
+
+Erro: Linha: 33 Id ou função não existe
+
+Erro: Linha: 33 O nome do retorno deve ser igual ao da funcao
+
+Erro: Linha: 35 A variavel já existe no escopo local 
 

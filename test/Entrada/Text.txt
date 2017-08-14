@@ -1,6 +1,6 @@
 program
 var begin
-integer a ;
+integer aml ;
 real n = 1;
 integer l = 12;
 integer m[2][3]=[1,2,3,4,5,6];
@@ -19,13 +19,26 @@ end
     char o;
     integer c=0;
     boolean vai =  true;
-    string dada = "dada";
+    string dl = "str";
     boolean tt = false;
     if(a>b)then begin
 		ab=3;
    	end
     end
 function teste (integer a, real b) begin
-integer teste = a;    
+integer teste = a;
+teste = aml;
+real hj = b;    
     end
+function naoVai (real lops, string nome) begin
+if (aml>lops||nome>aml) then begin
+lops = nome;
+end
+end
+function ntt (real lops, real nmm) begin
+if (lops>nmm||nmm<n) then begin
+lops = nmm;
+lops = n;
+end
 
+end

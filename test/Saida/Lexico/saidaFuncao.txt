@@ -1,0 +1,192 @@
+ 1 program palavra reservada
+ 2 var palavra reservada
+ 2 begin palavra reservada
+ 3 integer palavra reservada
+ 3 aml Identificador
+ 3 ; delimitador
+ 4 end palavra reservada
+ 5 const palavra reservada
+ 5 begin palavra reservada
+ 6 string palavra reservada
+ 6 f Identificador
+ 6 = operador relacional
+ 6 "olaola" string
+ 6 ; delimitador
+ 7 integer palavra reservada
+ 7 n Identificador
+ 7 = operador relacional
+ 7 1 numero
+ 7 , delimitador
+ 7 c Identificador
+ 7 = operador relacional
+ 7 2 numero
+ 7 ; delimitador
+ 8 boolean palavra reservada
+ 8 l Identificador
+ 8 = operador relacional
+ 8 true palavra reservada
+ 8 ; delimitador
+ 9 end palavra reservada
+ 10 function palavra reservada
+ 10 a Identificador
+ 10 ( delimitador
+ 10 integer palavra reservada
+ 10 a Identificador
+ 10 , delimitador
+ 10 integer palavra reservada
+ 10 b Identificador
+ 10 ) delimitador
+ 10 : delimitador
+ 10 integer palavra reservada
+ 11 begin palavra reservada
+ 12 a Identificador
+ 12 ( delimitador
+ 12 1 numero
+ 12 , delimitador
+ 12 a Identificador
+ 12 ) delimitador
+ 12 ; delimitador
+ 13 if palavra reservada
+ 13 ( delimitador
+ 13 a Identificador
+ 13 > operador relacional
+ 13 b Identificador
+ 13 ) delimitador
+ 13 then palavra reservada
+ 13 begin palavra reservada
+ 14 b Identificador
+ 14 = operador relacional
+ 14 3 numero
+ 14 ; delimitador
+ 15 nova Identificador
+ 15 ( delimitador
+ 15 a Identificador
+ 15 , delimitador
+ 15 b Identificador
+ 15 , delimitador
+ 15 "oi" string
+ 15 ) delimitador
+ 15 ; delimitador
+ 16 a Identificador
+ 16 -> retorno
+ 16 ( delimitador
+ 16 1 numero
+ 16 ) delimitador
+ 16 ; delimitador
+ 17 a Identificador
+ 17 -> retorno
+ 17 ( delimitador
+ 17 f Identificador
+ 17 ) delimitador
+ 17 ; delimitador
+ 18 end palavra reservada
+ 19 end palavra reservada
+ 20 function palavra reservada
+ 20 a Identificador
+ 20 ( delimitador
+ 20 integer palavra reservada
+ 20 a Identificador
+ 20 , delimitador
+ 20 integer palavra reservada
+ 20 b Identificador
+ 20 ) delimitador
+ 20 : delimitador
+ 20 integer palavra reservada
+ 21 begin palavra reservada
+ 22 if palavra reservada
+ 22 ( delimitador
+ 22 a Identificador
+ 22 > operador relacional
+ 22 b Identificador
+ 22 ) delimitador
+ 22 then palavra reservada
+ 22 begin palavra reservada
+ 23 b Identificador
+ 23 = operador relacional
+ 23 3 numero
+ 23 ; delimitador
+ 24 end palavra reservada
+ 25 end palavra reservada
+ 26 function palavra reservada
+ 26 a Identificador
+ 26 ( delimitador
+ 26 string palavra reservada
+ 26 a Identificador
+ 26 , delimitador
+ 26 integer palavra reservada
+ 26 b Identificador
+ 26 ) delimitador
+ 26 : delimitador
+ 26 integer palavra reservada
+ 27 begin palavra reservada
+ 28 a Identificador
+ 28 ( delimitador
+ 28 "oi" string
+ 28 , delimitador
+ 28 b Identificador
+ 28 ) delimitador
+ 28 ; delimitador
+ 29 if palavra reservada
+ 29 ( delimitador
+ 29 a Identificador
+ 29 > operador relacional
+ 29 b Identificador
+ 29 ) delimitador
+ 29 then palavra reservada
+ 29 begin palavra reservada
+ 30 b Identificador
+ 30 = operador relacional
+ 30 3 numero
+ 30 ; delimitador
+ 31 end palavra reservada
+ 32 end palavra reservada
+ 33 function palavra reservada
+ 33 a Identificador
+ 33 ( delimitador
+ 33 real palavra reservada
+ 33 a Identificador
+ 33 , delimitador
+ 33 integer palavra reservada
+ 33 b Identificador
+ 33 ) delimitador
+ 33 begin palavra reservada
+ 34 real palavra reservada
+ 34 teste Identificador
+ 34 = operador relacional
+ 34 a Identificador
+ 34 ; delimitador
+ 35 teste Identificador
+ 35 = operador relacional
+ 35 a Identificador
+ 35 * operador aritmetico
+ 35 1 numero
+ 35 ; delimitador
+ 36 end palavra reservada
+ 37 function palavra reservada
+ 37 nomeQ Identificador
+ 37 ( delimitador
+ 37 boolean palavra reservada
+ 37 l Identificador
+ 37 , delimitador
+ 37 string palavra reservada
+ 37 nome Identificador
+ 37 , delimitador
+ 37 string palavra reservada
+ 37 idade Identificador
+ 37 ) delimitador
+ 37 begin palavra reservada
+ 38 l Identificador
+ 38 = operador relacional
+ 38 true palavra reservada
+ 38 ; delimitador
+ 39 nome Identificador
+ 39 = operador relacional
+ 39 "am" string
+ 39 ; delimitador
+ 40 idade Identificador
+ 40 = operador relacional
+ 40 "a12" string
+ 40 ; delimitador
+ 41 end palavra reservada
+
+ Nao existem erros lexicos

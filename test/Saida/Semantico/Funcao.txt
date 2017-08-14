@@ -1,0 +1,10 @@
+Erro: Linha: 15 Id ou função não existe
+
+Erro: Linha: 15 Assinatura de funcao incorreta
+
+Erro: Linha: 17 Retorno incorreto
+
+Erro: Linha: 21 Funcao já existe
+
+Erro: Linha: 29 expressão entre tipos incompativeis
+

@@ -178,6 +178,8 @@
  21 4 numero
  21 , delimitador
  21 5 numero
+ 21 , delimitador
+ 21 8 numero
  21 ] delimitador
  21 ; delimitador
  22 integer palavra reservada

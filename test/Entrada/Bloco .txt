@@ -2,7 +2,7 @@ program
 	var begin
 		integer a[2][1] = [1,2] ;
                 real n[3]=[1,1,2];
-                boolean lol = true;
+                boolean lol = "a";
                 boolean tst = false;
 		string hu="am";
 		char oi = 'a';
@@ -14,13 +14,23 @@ program
                 real f = 4;
                 string lp ="oi";
 	end
-	function subtracao(integer trt, real b, char u):string begin
-	        read(a[1][1]);
+	function subtracao(integer null, real b, char u):string begin
+	        string nome, idade, sexo;
+                integer n = 1;
+                null = n;
+                n = m[1][2];
+                string tt = "ml";
+                string nn = "oi";
+                boolean kj;
+                kj = tt==nn;
+                n = 'a';
+                read(a[1][1]);
                 write(amora);
-                integer i[3][2]=[1,2,3,4,5];
-		integer e =  1;
-		integer y,l,k,g;
+                nome = "Amanda";
+                idade = 13;
+        	integer y,l,k,g;
                 y =c;
+                funcao->(lp);
                 subtracao->(lp);
                 string n;
                 y = y+k;

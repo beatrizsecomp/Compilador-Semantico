@@ -6,17 +6,17 @@ Erro: Linha: 5 Atribuicao em matriz de tipo incompativel
 
 Erro: Linha: 5 Atribuicao em matriz de tipo incompativel
 
-Erro: Linha: 6 Tipo incompativel
+Erro: Linha: 6 Atribuicao de tipo incompativel
 
 Erro: Linha: 11 Variavel ja existe
 
 Erro: Linha: 12 Variavel ja existe
 
-Erro: Linha: 15 Tipo incompativel
+Erro: Linha: 15 Atribuicao de tipo incompativel
+
+Erro: Linha: 15 Variavel já existe no escopo global
 
 Erro: Linha: 15 Variavel já existe no escopo global
 
 Erro: Linha: 20 Variavel ja existe no escopo local
-
-Erro: Linha: 21 Atribuição em matriz de tamanho incorreto
 

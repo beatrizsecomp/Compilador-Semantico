@@ -33,7 +33,7 @@
  5 boolean palavra reservada
  5 lol Identificador
  5 = operador relacional
- 5 true palavra reservada
+ 5 "a" string
  5 ; delimitador
  6 boolean palavra reservada
  6 tst Identificador
@@ -101,7 +101,7 @@
  17 subtracao Identificador
  17 ( delimitador
  17 integer palavra reservada
- 17 trt Identificador
+ 17 null Identificador
  17 , delimitador
  17 real palavra reservada
  17 b Identificador
@@ -112,76 +112,113 @@
  17 : delimitador
  17 string palavra reservada
  17 begin palavra reservada
- 18 read palavra reservada
- 18 ( delimitador
- 18 a Identificador
- 18 [ delimitador
- 18 1 numero
- 18 ] delimitador
- 18 [ delimitador
- 18 1 numero
- 18 ] delimitador
- 18 ) delimitador
+ 18 string palavra reservada
+ 18 nome Identificador
+ 18 , delimitador
+ 18 idade Identificador
+ 18 , delimitador
+ 18 sexo Identificador
  18 ; delimitador
- 19 write palavra reservada
- 19 ( delimitador
- 19 amora Identificador
- 19 ) delimitador
+ 19 integer palavra reservada
+ 19 n Identificador
+ 19 = operador relacional
+ 19 1 numero
  19 ; delimitador
- 20 integer palavra reservada
- 20 i Identificador
- 20 [ delimitador
- 20 3 numero
- 20 ] delimitador
- 20 [ delimitador
- 20 2 numero
- 20 ] delimitador
+ 20 null Identificador
  20 = operador relacional
- 20 [ delimitador
- 20 1 numero
- 20 , delimitador
- 20 2 numero
- 20 , delimitador
- 20 3 numero
- 20 , delimitador
- 20 4 numero
- 20 , delimitador
- 20 5 numero
- 20 ] delimitador
+ 20 n Identificador
  20 ; delimitador
- 21 integer palavra reservada
- 21 e Identificador
+ 21 n Identificador
  21 = operador relacional
+ 21 m Identificador
+ 21 [ delimitador
  21 1 numero
+ 21 ] delimitador
+ 21 [ delimitador
+ 21 2 numero
+ 21 ] delimitador
  21 ; delimitador
- 22 integer palavra reservada
- 22 y Identificador
- 22 , delimitador
- 22 l Identificador
- 22 , delimitador
- 22 k Identificador
- 22 , delimitador
- 22 g Identificador
+ 22 string palavra reservada
+ 22 tt Identificador
+ 22 = operador relacional
+ 22 "ml" string
  22 ; delimitador
- 23 y Identificador
+ 23 string palavra reservada
+ 23 nn Identificador
  23 = operador relacional
- 23 c Identificador
+ 23 "oi" string
  23 ; delimitador
- 24 subtracao Identificador
- 24 -> retorno
- 24 ( delimitador
- 24 lp Identificador
- 24 ) delimitador
+ 24 boolean palavra reservada
+ 24 kj Identificador
  24 ; delimitador
- 25 string palavra reservada
- 25 n Identificador
+ 25 kj Identificador
+ 25 = operador relacional
+ 25 tt Identificador
+ 25 == operador relacional
+ 25 nn Identificador
  25 ; delimitador
- 26 y Identificador
+ 26 n Identificador
  26 = operador relacional
- 26 y Identificador
- 26 + operador aritmetico
- 26 k Identificador
+ 26 'a' char
  26 ; delimitador
- 27 end palavra reservada
+ 27 read palavra reservada
+ 27 ( delimitador
+ 27 a Identificador
+ 27 [ delimitador
+ 27 1 numero
+ 27 ] delimitador
+ 27 [ delimitador
+ 27 1 numero
+ 27 ] delimitador
+ 27 ) delimitador
+ 27 ; delimitador
+ 28 write palavra reservada
+ 28 ( delimitador
+ 28 amora Identificador
+ 28 ) delimitador
+ 28 ; delimitador
+ 29 nome Identificador
+ 29 = operador relacional
+ 29 "Amanda" string
+ 29 ; delimitador
+ 30 idade Identificador
+ 30 = operador relacional
+ 30 13 numero
+ 30 ; delimitador
+ 31 integer palavra reservada
+ 31 y Identificador
+ 31 , delimitador
+ 31 l Identificador
+ 31 , delimitador
+ 31 k Identificador
+ 31 , delimitador
+ 31 g Identificador
+ 31 ; delimitador
+ 32 y Identificador
+ 32 = operador relacional
+ 32 c Identificador
+ 32 ; delimitador
+ 33 funcao Identificador
+ 33 -> retorno
+ 33 ( delimitador
+ 33 lp Identificador
+ 33 ) delimitador
+ 33 ; delimitador
+ 34 subtracao Identificador
+ 34 -> retorno
+ 34 ( delimitador
+ 34 lp Identificador
+ 34 ) delimitador
+ 34 ; delimitador
+ 35 string palavra reservada
+ 35 n Identificador
+ 35 ; delimitador
+ 36 y Identificador
+ 36 = operador relacional
+ 36 y Identificador
+ 36 + operador aritmetico
+ 36 k Identificador
+ 36 ; delimitador
+ 37 end palavra reservada
 
  Nao existem erros lexicos

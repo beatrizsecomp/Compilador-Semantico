@@ -2,7 +2,7 @@
  2 var palavra reservada
  2 begin palavra reservada
  3 integer palavra reservada
- 3 a Identificador
+ 3 aml Identificador
  3 ; delimitador
  4 real palavra reservada
  4 n Identificador
@@ -108,9 +108,9 @@
  21 true palavra reservada
  21 ; delimitador
  22 string palavra reservada
- 22 dada Identificador
+ 22 dl Identificador
  22 = operador relacional
- 22 "dada" string
+ 22 "str" string
  22 ; delimitador
  23 boolean palavra reservada
  23 tt Identificador
@@ -146,6 +146,75 @@
  29 = operador relacional
  29 a Identificador
  29 ; delimitador
- 30 end palavra reservada
+ 30 teste Identificador
+ 30 = operador relacional
+ 30 aml Identificador
+ 30 ; delimitador
+ 31 real palavra reservada
+ 31 hj Identificador
+ 31 = operador relacional
+ 31 b Identificador
+ 31 ; delimitador
+ 32 end palavra reservada
+ 33 function palavra reservada
+ 33 naoVai Identificador
+ 33 ( delimitador
+ 33 real palavra reservada
+ 33 lops Identificador
+ 33 , delimitador
+ 33 string palavra reservada
+ 33 nome Identificador
+ 33 ) delimitador
+ 33 begin palavra reservada
+ 34 if palavra reservada
+ 34 ( delimitador
+ 34 aml Identificador
+ 34 > operador relacional
+ 34 lops Identificador
+ 34 || operador logico
+ 34 nome Identificador
+ 34 > operador relacional
+ 34 aml Identificador
+ 34 ) delimitador
+ 34 then palavra reservada
+ 34 begin palavra reservada
+ 35 lops Identificador
+ 35 = operador relacional
+ 35 nome Identificador
+ 35 ; delimitador
+ 36 end palavra reservada
+ 37 end palavra reservada
+ 38 function palavra reservada
+ 38 ntt Identificador
+ 38 ( delimitador
+ 38 real palavra reservada
+ 38 lops Identificador
+ 38 , delimitador
+ 38 real palavra reservada
+ 38 nmm Identificador
+ 38 ) delimitador
+ 38 begin palavra reservada
+ 39 if palavra reservada
+ 39 ( delimitador
+ 39 lops Identificador
+ 39 > operador relacional
+ 39 nmm Identificador
+ 39 || operador logico
+ 39 nmm Identificador
+ 39 < operador relacional
+ 39 n Identificador
+ 39 ) delimitador
+ 39 then palavra reservada
+ 39 begin palavra reservada
+ 40 lops Identificador
+ 40 = operador relacional
+ 40 nmm Identificador
+ 40 ; delimitador
+ 41 lops Identificador
+ 41 = operador relacional
+ 41 n Identificador
+ 41 ; delimitador
+ 42 end palavra reservada
+ 43 end palavra reservada
 
  Nao existem erros lexicos

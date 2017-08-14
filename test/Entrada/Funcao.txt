@@ -1,0 +1,42 @@
+program
+var begin
+integer aml ;
+end
+const begin 
+string f ="olaola";
+integer n =1,c=2;
+boolean l = true;
+end
+ function a(integer a,integer b):integer
+    begin
+a(1,a);
+    if(a>b)then begin
+	b = 3;
+nova (a,b,"oi");
+a->(1);
+a->(f);
+   	end
+    end
+ function a(integer a,integer b):integer
+    begin
+    if(a>b)then begin
+	b = 3;
+   	end
+    end
+ function a(string a,integer b):integer
+    begin
+a("oi",b);
+    if(a>b)then begin
+	b = 3;
+   	end
+    end
+function a (real a, integer b) begin
+real teste = a;
+teste = a*1;
+    end
+function nomeQ (boolean l, string nome, string idade) begin
+l = true;
+nome = "am";
+idade = "a12";
+end
+

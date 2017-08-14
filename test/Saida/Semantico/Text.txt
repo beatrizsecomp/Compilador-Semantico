@@ -1,8 +1,12 @@
 Erro: Linha: 13 Variavel ja existe no escopo local
 
+Erro: Linha: 15 A variavel já existe no escopo local 
+
+Erro: Linha: 18 A variavel já existe no escopo local 
+
 Erro: Linha: 25 Id ou função não existe
 
-Erro: Linha: 25 expressão entre tipos incompativeis 
+Erro: Linha: 34 expressão entre tipos incompativeis
 
-Erro: Linha: 29 Atribuição com variavel de tipo incompativel
+Erro: Linha: 35 Tipos incompativeis
 
